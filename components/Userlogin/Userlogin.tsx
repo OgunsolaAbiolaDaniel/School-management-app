@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 import logo from '@/public/assets/images/logo.png'
@@ -71,9 +72,9 @@ function Userlogin() {
           </p>
           <button
             type="button"
-            className="bg-zinc-800 border-[2px] border-black shadow-lg text-white rounded-lg py-1.5 mb-3 mx-3 text-sm hover:bg-zinc-700"
+            className="bg-zinc-800 border-[2px] flex justify-center items-center gap-2 border-black shadow-lg text-white rounded-lg py-1.5 mb-3 mx-3 text-sm hover:bg-zinc-700"
           >
-            {" "}
+            <motion.div className='w-4 h-4 border-[3px] border-slate-500 rounded-full bg-transparent border-t-white' animate= {{rotate:360,}} transition={{duration:0.50, repeat:Infinity, ease:"linear"}}></motion.div>
             Get Started
           </button>
           <div className="flex items-center mb-4">
