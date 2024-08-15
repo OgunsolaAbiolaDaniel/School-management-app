@@ -7,13 +7,19 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { useState } from 'react';
 import { LuSettings2 } from "react-icons/lu";
 import Sidebar from '../Sidebar/Sidebar';
+import Notification from '../Notification/Notification';
+import Settings from '../Settingbox/Settings';
 
 
 function Navbar() {
   const [openmenu, setOpenmenu] = useState(false);
+  const [opennotification, setOpennotification] = useState(false);
+  const [opensettings, setOpensettings]=useState(false);
 
   function opensidebar() {
-    setOpenmenu(true)
+    setOpenmenu(true);
+    setOpensettings(false);
+    setOpennotification(false);
   }
   function closesidebar() {
  setOpenmenu(false);
@@ -31,7 +37,7 @@ function Navbar() {
                 className="text-lg bg-gray-100 p-2 rounded-md  font-light text-zinc-800 lg:hidden"
                 onClick={opensidebar}
               >
-                  <HiOutlineMenu />
+                <HiOutlineMenu />
               </button>
             </div>
 
@@ -74,6 +80,11 @@ function Navbar() {
             <button
               type="button"
               title="notification button"
+              onClick={() => {
+                setOpennotification(!opennotification);
+                setOpenmenu(false);
+                setOpensettings(false)
+              }}
               className="text-lg bg-gray-100 p-2 rounded-md flex  font-light text-zinc-800 "
             >
               <span>
@@ -84,6 +95,11 @@ function Navbar() {
             <button
               type="button"
               title="profile button"
+              onClick={() => {
+                setOpensettings(!opensettings); 
+                setOpennotification(false);
+                setOpenmenu(false);
+              }}
               className="flex text-lg bg-gray-100 p-2 rounded-md items-center justify-center"
             >
               <IoSettingsOutline />
@@ -91,7 +107,9 @@ function Navbar() {
           </div>
         </div>
       </div>
-      {openmenu && <Sidebar onClose={closesidebar}  />}
+      {openmenu && <Sidebar onClose={closesidebar} statecheck={openmenu} />}
+      {opennotification && <Notification />}
+      {opensettings && <Settings />}
     </>
   );
 }

@@ -12,16 +12,22 @@ import { RiMenu3Line, RiUserSettingsLine } from 'react-icons/ri';
 import { RxDashboard } from 'react-icons/rx';
 
 function Secondsidebar() {
-    const [opensidebar, setOpensidebar] = useState(false);
+    const [opensidebar, setOpensidebar] = useState(true);
     const [theme,settheme] = useState(false)
   return (
-    <motion.div className="z-20 m-1.5 ">
-      <div
-        className={
-          opensidebar
-            ? "flex flex-col justify-between h-screen py-4 px-3 w-fit rounded-xl bg-gray-100"
-            : "flex flex-col justify-between h-screen py-4 px-2 w-fit rounded-xl bg-gray-100"
-        }
+    <motion.div
+      initial={{ x: -500 }} // Sidebar starts hidden off the screen
+      animate={{ x: 0 }} // Sidebar slides in when the component is rendered
+      transition={{ type: "spring", stiffness: 300, damping: 30 }} // Springy animation
+      className="z-20 m-1.5 hidden lg:contents"
+    >
+      <motion.div
+        layout
+        animate={{
+          width: opensidebar ? "w-fit" : "w-fit", // Expand or collapse the sidebar
+        }}
+        transition={{ duration: 0.15, ease: opensidebar ? "linear" : "easeOut" }} // Smooth transition
+        className="flex flex-col justify-between h-screen py-4 px-3 w-fit rounded-xl bg-gray-100 self-center"
       >
         <div
           className={
@@ -229,7 +235,7 @@ function Secondsidebar() {
             </button>
           )}
         </footer>
-      </div>
+      </motion.div>
     </motion.div>
   );
 }
