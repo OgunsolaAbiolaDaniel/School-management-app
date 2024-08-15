@@ -19,7 +19,7 @@ function Secondsidebar() {
       initial={{ x: -500 }} // Sidebar starts hidden off the screen
       animate={{ x: 0 }} // Sidebar slides in when the component is rendered
       transition={{ type: "spring", stiffness: 300, damping: 30 }} // Springy animation
-      className="z-20 m-1.5 hidden lg:contents"
+      className="z-20 hidden lg:contents"
     >
       <motion.div
         layout
@@ -27,7 +27,7 @@ function Secondsidebar() {
           width: opensidebar ? "w-fit" : "w-fit", // Expand or collapse the sidebar
         }}
         transition={{ duration: 0.15, ease: opensidebar ? "linear" : "easeOut" }} // Smooth transition
-        className="flex flex-col justify-between h-screen py-4 px-3 w-fit rounded-xl bg-gray-100 self-center"
+        className="flex shadow-sm flex-col justify-between h-screen py-4 px-3 w-fit rounded-xl bg-gray-100 self-center m-1.5"
       >
         <div
           className={

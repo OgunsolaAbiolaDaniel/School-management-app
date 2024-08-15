@@ -1,10 +1,16 @@
+'use client'
 import React from 'react'
 import { HiOutlineUser } from "react-icons/hi2";
 import { IoIosHelpBuoy } from "react-icons/io";
 import { TiArrowSyncOutline } from "react-icons/ti";
 import { MdOutlineLogout } from "react-icons/md";
+import { useRouter } from 'next/navigation';
 
 function Settings() {
+  const router = useRouter();
+  function logout() {
+    router.push('/')
+  }
   return (
     <div className="flex flex-col w-[250px] absolute z-20  left-[15%] shadow-lg  sm:left-[27%] bsm:w-[330px] bsm:left-[40%] md:left-[55%] lg:left-[66%] xl:left-[72%] 2xl:left-[77%] rounded-lg px-1">
       <div>
@@ -58,7 +64,7 @@ function Settings() {
             </div>
           </li>
           <li className="p-2 px-1 mx-8 flex gap-2 justify-center border  items-center hover:bg-red-400 hover:text-white rounded-xl">
-            <button title="Logout button" className="flex text-base ">
+            <button title="Logout button" className="flex text-base" type='button' onClick={logout} >
               <div className="flex items-center gap-1">
                 <h3 className="text-sm font-normal" id="setting title">
                   Logout
