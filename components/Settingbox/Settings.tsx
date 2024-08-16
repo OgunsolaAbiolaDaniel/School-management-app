@@ -12,7 +12,7 @@ function Settings() {
     router.push('/')
   }
   return (
-    <div className="flex flex-col w-[250px] absolute z-20  left-[15%] shadow-lg  sm:left-[27%] bsm:w-[330px] bsm:left-[40%] md:left-[55%] lg:left-[66%] xl:left-[72%] 2xl:left-[77%] rounded-lg px-1">
+    <div className="flex flex-col bg-white w-[250px] absolute z-20  left-[15%] shadow-lg  sm:left-[27%] bsm:w-[330px] bsm:left-[40%] md:left-[55%] lg:left-[66%] xl:left-[72%] 2xl:left-[77%] rounded-lg px-1">
       <div>
         <div className="px-3 text-sm font-serif tracking-wider border-b py-1.5">
           <div>Settings</div>

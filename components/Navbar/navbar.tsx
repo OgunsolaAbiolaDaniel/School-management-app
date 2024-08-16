@@ -34,7 +34,7 @@ function Navbar() {
               <button
                 type="button"
                 title="sidebar"
-                className="text-lg bg-gray-100 p-2 rounded-md  font-light text-zinc-800 lg:hidden"
+                className="text-lg bg-gray-100 p-2 rounded-md  font-light text-zinc-800 bmd:hidden"
                 onClick={opensidebar}
               >
                 <HiOutlineMenu />

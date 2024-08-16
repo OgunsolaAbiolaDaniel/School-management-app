@@ -19,7 +19,7 @@ function Secondsidebar() {
       initial={{ x: -500 }} // Sidebar starts hidden off the screen
       animate={{ x: 0 }} // Sidebar slides in when the component is rendered
       transition={{ type: "spring", stiffness: 300, damping: 30 }} // Springy animation
-      className="z-20 hidden lg:contents"
+      className="z-20 hidden bmd:contents"
     >
       <motion.div
         layout
@@ -36,7 +36,7 @@ function Secondsidebar() {
               : "w-fit flex flex-col justify-between items-center"
           }
         >
-          <header className="self-start flex items-center justify-between px-2 gap-16 mb-16">
+          <div className="self-start flex items-center justify-between px-2 gap-16 mb-16">
             <div
               className={
                 opensidebar
@@ -66,7 +66,7 @@ function Secondsidebar() {
                 <RiMenu3Line />
               </button>
             )}
-          </header>
+          </div>
 
           <div
             className={
@@ -236,6 +236,7 @@ function Secondsidebar() {
           )}
         </footer>
       </motion.div>
+      
     </motion.div>
   );
 }
