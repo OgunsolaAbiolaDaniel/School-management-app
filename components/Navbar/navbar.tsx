@@ -28,7 +28,7 @@ function Navbar() {
   return (
     <>
       <div id="navbar-sidebar" className="w-full z-10">
-        <div className="py-6 px-2.5 flex justify-between w-full">
+        <div className="py-6 px-2.5 flex justify-between  w-full ">
           <div id="first menu" className="flex items-center gap-3 ">
             <div className="flex flex-col">
               <button

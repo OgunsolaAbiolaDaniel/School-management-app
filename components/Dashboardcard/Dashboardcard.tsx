@@ -26,7 +26,7 @@ function Dashboardcard({
       </div>
 
       <div
-        className={`self-end text-[120px] top-9 ${svgclass} relative left-8 md:left-2 xl:left-16`}
+        className={`self-end text-[120px] top-9 ${svgclass} relative left-8 sm:left-14 md:left-2 bsm:left-8 xl:left-16`}
       >
         {icon}
       </div>
