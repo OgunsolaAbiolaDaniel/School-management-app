@@ -19,12 +19,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className="flex">
-          <div className="hidden bmd:contents  w-fit">
+          <div className="hidden bmd:contents w-fit ">
             <Secondsidebar />
           </div>
           <div className="flex-col w-full">
             <Navbar />
-            <div className="px-2 py-1">{children}</div>
+            {/*TODO Change the overflow and the overflow mangement scroller style */}
+            <div className="px-2 py-1  ">{children}</div>
           </div>
         </div>
       </body>

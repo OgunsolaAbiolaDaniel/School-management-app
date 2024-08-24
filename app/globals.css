@@ -5,3 +5,6 @@
 body{
     background-color:  rgb(249 250 251);
 }
+input[type="text"]:focus ~ .input-custom{
+    @apply  text-zinc-900 bg-white font-semibold opacity-85 px-0.5 scale-90 transform -translate-x-3 -translate-y-4;
+}
