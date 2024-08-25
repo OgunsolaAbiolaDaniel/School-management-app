@@ -13,7 +13,7 @@ function Attendancetable() {
         <thead className="border-b py-4 px-4">
           <tr className="py-3 border-b">
             <td className="text-[18px] font-semibold font-serif py-3 text-slate-800">
-              Today's Attendance
+              Today&apos;s Attendance
             </td>
           </tr>
           <tr className="flex gap-4 py-3 justify-start border-b text-sm tracking-wide text-slate-600 text-opacity-80 font-semibold">
@@ -29,10 +29,15 @@ function Attendancetable() {
             <td className="w-1/5 px-3 flex">1</td>
             <td className="w-1/5 flex px-3">Math 101</td>
             <td className="w-1/5 px-3 flex flex-col items-center md:flex-row gap-1">
-              <div className='w-8 items-center rounded-full overflow-hidden object-cover'>
-                <Image width={500} height={500} src={profileimg} alt='profile image' />
+              <div className="w-8 items-center rounded-full overflow-hidden object-cover">
+                <Image
+                  width={500}
+                  height={500}
+                  src={profileimg}
+                  alt="profile image"
+                />
               </div>
-              <span className='flex justify-center'>Tim Peterson</span>
+              <span className="flex justify-center">Tim Peterson</span>
             </td>
             <td className="w-1/5 px-3 ">5</td>
             <td className="w-1/5 px-3 flex">
