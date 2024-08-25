@@ -43,7 +43,7 @@ function Navbar() {
 
             <form
               action="#"
-              className="flex"
+              className="flex relative"
               onSubmit={(event) => {
                 event.preventDefault;
               }}
@@ -85,7 +85,7 @@ function Navbar() {
                 setOpenmenu(false);
                 setOpensettings(false)
               }}
-              className="text-lg bg-gray-100 p-2 rounded-md flex  font-light text-zinc-800 "
+              className="text-lg bg-gray-100 p-2 rounded-md flex relative  font-light text-zinc-800 "
             >
               <span>
                 <BiBell />

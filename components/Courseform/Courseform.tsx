@@ -37,7 +37,7 @@ const customStyles = {
 };
 function Courseform() {
   return (
-    <div className="border w-full rounded-lg py-2">
+    <div className="border shadow-md w-full rounded-lg py-2">
       <form
         action="#"
         onSubmit={(event) => {
@@ -70,10 +70,12 @@ function Courseform() {
           </div>
           {/*TODO  click should be changed to function && generate button for code should check in store state later*/}
           <div className="flex justify-between w-full py-3 px-1 mb-3">
-            <div className="border border-zinc-400  px-3 py-1.5 text-sm">#0000</div>
-           <GenerateButton click=""/>
+            <div className="border border-zinc-400  px-3 py-1.5 text-sm">
+              #0000
+            </div>
+            <GenerateButton click="" />
           </div>
-          <div className='mb-1 py-1.5'>
+          <div className="mb-1 py-1.5">
             <Addbutton click="" />
           </div>
         </div>

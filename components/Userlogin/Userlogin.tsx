@@ -21,10 +21,10 @@ function Userlogin() {
     setloader(true);
      setTimeout(() => {
        setLoadingPage(true);
-     }, 800);
+     }, 200);
     setTimeout(() => {
       router.push('/Admin/Dashboard ')
-    },1500)
+    },100)
     }
   return (
     <>

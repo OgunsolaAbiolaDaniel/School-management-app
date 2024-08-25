@@ -28,7 +28,7 @@ function Secondsidebar() {
           width: opensidebar ? "w-fit" : "w-fit", // Expand or collapse the sidebar
         }}
         transition={{ duration: 0.15, ease: opensidebar ? "linear" : "easeOut" }} // Smooth transition
-        className="flex shadow-sm flex-col justify-between py-4 px-3 w-fit rounded-xl bg-gray-100  m-1.5 h-[100vh]"
+        className="flex shadow-sm flex-col justify-between py-4 px-3 w-fit rounded-xl self-center bg-gray-100  m-1.5 h-[100vh]"
       >
         <div
           className={
