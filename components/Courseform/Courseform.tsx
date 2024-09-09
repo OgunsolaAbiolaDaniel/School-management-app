@@ -73,7 +73,7 @@ function Courseform() {
             <div className="border border-zinc-400  px-3 py-1.5 text-sm">
               #0000
             </div>
-            <GenerateButton click="" />
+            <GenerateButton click="" title={'Code'} />
           </div>
           <div className="mb-1 py-1.5">
             <Addbutton click="" />

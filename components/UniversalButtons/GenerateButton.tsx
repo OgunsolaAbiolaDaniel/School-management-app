@@ -1,9 +1,9 @@
 import React from 'react'
 import { FaReact } from "react-icons/fa";
-function GenerateButton({click}:{click:any}) {
+function GenerateButton({ click, title }: { click: any; title: string; }) {
   return (
     <button
-      title="Generate Code button"
+      title="Generate button"
       onClick={click}
       type="button"
       className="text-sm flex items-center bg-blue-500 px-2.5 py-1.5 rounded-lg hover:opacity-65 gap-x-0.5 text-white font-medium"
@@ -11,7 +11,7 @@ function GenerateButton({click}:{click:any}) {
       <span className='text-base'>
         <FaReact />
       </span>
-      <span>Generate Code</span>
+      <span>Generate {title}</span>
     </button>
   );
 }

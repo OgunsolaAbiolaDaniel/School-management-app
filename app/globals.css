@@ -8,3 +8,12 @@ body{
 input[type="text"]:focus ~ .input-custom{
     @apply  text-zinc-900 bg-white font-semibold opacity-85 px-0.5 scale-90 transform -translate-x-3 -translate-y-4;
 }
+input[type="email"]:focus ~ .input-custom{
+    @apply  text-zinc-900 bg-white font-semibold opacity-85 px-0.5 scale-90 transform -translate-x-3 -translate-y-4;
+}
+input[type="password"]:focus ~ .input-custom{
+    @apply  text-zinc-900 bg-white font-semibold opacity-85 px-0.5 scale-90 transform -translate-x-3 -translate-y-4;
+}
+input[type="number"]:focus ~ .input-custom{
+    @apply  text-zinc-900 bg-white font-semibold opacity-85 px-0.5 scale-90 transform -translate-x-3 -translate-y-4;
+}
