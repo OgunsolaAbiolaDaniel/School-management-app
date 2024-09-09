@@ -5,7 +5,7 @@ import SearchButton from '../UniversalButtons/SearchButton';
 
 import Foundtable from '../Table/Foundtable';
 
-function Tracker() {
+function Tracker({ label }: { label: string; }) {
   return (
     <div className="border shadow-md w-full rounded-lg py-2 flex flex-col  overflow-x-scroll">
       <form
@@ -18,14 +18,14 @@ function Tracker() {
           <span>
             <MdOutlineLocationSearching />
           </span>
-          Find Lecturer
+          Find {label}
           <span>
             <MdOutlineLocationSearching />
           </span>
         </div>
 
         <div className="px-4 flex flex-col gap-2 items-center w-85%">
-          <Input label={"lecturer[#]Id"} title={"id"} type={"number"} />
+          <Input label={`${label}[#]Id`} title={"id"} type={"number"} />
 
           {/*TODO  click should be changed to function && generate button for code should check in store state later*/}
           <div className="flex  justify-end w-full py-3 px-1 mb-3">

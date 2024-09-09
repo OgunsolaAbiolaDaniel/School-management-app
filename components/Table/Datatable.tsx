@@ -1,6 +1,6 @@
 import React from 'react'
 import { GrView } from "react-icons/gr";
-function Datatable() {
+function Datatable({ title }: { title: string; }) {
   return (
     <div
       id="table"
@@ -10,7 +10,7 @@ function Datatable() {
         <thead className="border-b py-4 px-4">
           <tr className="py-3 border-b">
             <td className="text-[18px] font-semibold font-sans tracking-wider py-3 text-slate-800">
-            Lecturers
+           {title}
             </td>
                <td>
                       
