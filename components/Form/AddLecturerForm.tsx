@@ -42,7 +42,7 @@ const customStyles = {
 function AddLecturerForm() {
     
   return (
-         <div className="border shadow-md w-full bsm:w-fit rounded-lg py-2">
+    <div className="border shadow-md w-full bsm:w-fit rounded-lg py-2">
       <form
         action="#"
         onSubmit={(event) => {
@@ -55,61 +55,61 @@ function AddLecturerForm() {
             <GiTeacher />
           </span>
         </div>
-              <div className="px-4 flex flex-col gap-2 items-center w-85%">
+        <div className="px-4 flex flex-col gap-2 items-center w-85%">
                   
-         <div className='flex flex-col w-full gap-2 bsm:flex-row bsm:gap-4 justify-between '>
-          <Input label={"First Name"} title={"First name"} type={"text"} />
-          <Input label={"Last Name"} title={"Last name"} type={"text"} />        
-                  </div>
           <div className='flex flex-col w-full gap-2 bsm:flex-row bsm:gap-4 justify-between '>
-          <Input label={"Email"} title={"Email"} type={"email"} />
-          <Input label={"Password"} title={"Password"} type={"password"} />        
-            </div>
+            <Input label={"First Name"} title={"First name"} type={"text"} />
+            <Input label={"Last Name"} title={"Last name"} type={"text"} />
+          </div>
+          <div className='flex flex-col w-full gap-2 bsm:flex-row bsm:gap-4 justify-between '>
+            <Input label={"Email"} title={"Email"} type={"email"} />
+            <Input label={"Password"} title={"Password"} type={"password"} />
+          </div>
                   
-        <div className='flex flex-col w-full gap-2 bsm:flex-row self-start bsm:gap-4 justify-between '>
-          <Input label={"Address"} title={"Address"} type={"text"} />      
-                  </div>
-                  {/*select courses */}
-                  <div className='flex flex-col w-full gap-2 bsm:flex-row bsm:gap-4 justify-between '>
-                      <div className='bsm:w-1/2'>
-                          {/*All Faculty */}
-                          <Select
-                          options={secoptions}
-                          classNamePrefix="custom-select"
-                          placeholder="Department"
-                              styles={customStyles} />
-                      </div>
-                      {/*TODO Fiter for all  courses in the faculty and enable multi select */}
-                       <div className='bsm:w-1/2'>
-                          <Select
-                          options={secoptions}
-                          classNamePrefix="custom-select"
-                          placeholder="Courses"
-                          styles={customStyles} />
-                      </div>
+          <div className='flex flex-col w-full gap-2 bsm:flex-row self-start bsm:gap-4 justify-between '>
+            <Input label={"Address"} title={"Address"} type={"text"} />
+          </div>
+          {/*select courses */}
+          <div className='flex flex-col w-full gap-2 bsm:flex-row bsm:gap-4 justify-between '>
+            <div className='bsm:w-1/2'>
+              {/*All Faculty */}
+              <Select
+                options={secoptions}
+                classNamePrefix="custom-select"
+                placeholder="Department"
+                styles={customStyles} />
+            </div>
+            {/*TODO Fiter for all  courses in the faculty and enable multi select */}
+            <div className='bsm:w-1/2'>
+              <Select
+                options={secoptions}
+                classNamePrefix="custom-select"
+                placeholder="Courses"
+                styles={customStyles} />
+            </div>
                      
 
-                  </div>
-                  {/*Generate Id */}
-                  <div className='w-full bsm:self-start'>
-                     <div className="flex justify-between w-full py-3 px-1 mb-3">
-                      <div className="border border-zinc-400  px-3 py-1.5 text-sm">
-                     #0000
-                    </div>
-                  <GenerateButton click="" title={'Id'} />
-                  </div>
-                  </div>
-
-
-
-                  {/*TODO Image Picker */}{/*make sur the label placeholder is hidden when there is an input  */}
-                  <div className='flex self-start justify-between sm:gap-6 p-2 mb-6 '>
-                      <div className='size-28 border-dashed border-2 rounded-full object-contain overflow-hidden'>
-                          <Image alt="profile image preview" className='' src={profileimg} width={500} height={500}/ >
+          </div>
+          {/*Generate Id */}
+          <div className='w-full bsm:self-start'>
+            <div className="flex justify-between w-full py-3 px-1 mb-3">
+              <div className="border border-zinc-400  px-3 py-1.5 text-sm">
+                #0000
+              </div>
+              <GenerateButton click="" title={'Id'} />
             </div>
-                    <label htmlFor="filepicker" className='hidden'> <input title='filepicker' type="file" accept='.jpg,.jpeg,.png' className='hidden' /></label>
-                      <div className='self-end'><PickImagebutton click={undefined}/></div>
-                  </div>
+          </div>
+
+
+
+          {/*TODO Image Picker */}{/*make sur the label placeholder is hidden when there is an input  */}
+          <div className='flex self-start justify-between sm:gap-6 p-2 mb-6 '>
+            <div className='size-28 border-dashed border-2 rounded-full object-contain overflow-hidden'>
+              <Image alt="profile image preview" className='' src={profileimg} width={500} height={500} />
+            </div>
+            <label htmlFor="filepicker" className='hidden'> <input title='filepicker' type="file" accept='.jpg,.jpeg,.png' className='hidden' /></label>
+            <div className='self-end'><PickImagebutton click={undefined} /></div>
+          </div>
                  
                   
                   
@@ -133,7 +133,7 @@ function AddLecturerForm() {
 
 
 
-        {/*  <div className="mb-2 w-full">
+          {/*  <div className="mb-2 w-full">
             <Select
               options={options}
                  classNamePrefix="custom-select"
@@ -170,7 +170,7 @@ function AddLecturerForm() {
 
 
 
-  )
+  );
 }
 
 export default AddLecturerForm

@@ -22,7 +22,7 @@ export default function RootLayout({
           <div className="hidden bmd:contents w-fit ">
             <Secondsidebar />
           </div>
-          <div className="flex-col w-full overflow-scroll h-screen">
+          <div className="flex-col w-full overflow-y-scroll h-screen">
             <Navbar />
             {/*TODO Change the overflow and the overflow mangement scroller style */}
             <div className="px-2 py-1 overflow-y-scroll">{children}</div>

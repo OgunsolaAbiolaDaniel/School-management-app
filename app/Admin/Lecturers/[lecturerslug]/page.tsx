@@ -1,5 +1,4 @@
 import React from 'react'
-import { PiStudentLight } from 'react-icons/pi'
 import profileimage from '@/public/assets/images/profileimg.png'
 import logo from '@/public/assets/images/logo.png'
 import Image from 'next/image'
@@ -12,7 +11,7 @@ function page() {
         <>
          
          <div className="flex items-center font-serif justify-start gap-2 font-medium text-lg px-2.5 py-3 mb-2">
-            Student Detail
+            Lecturer Detail
           </div>
            {/*content*/}
          <div className='border shadow-sm w-full p-2 py-5 rounded-lg'>
@@ -85,31 +84,18 @@ function page() {
               {/*Last Name */}
                         </div>
              {/*Guardians Name  and Email*/}
-             <div className="flex px-1 w-full gap-2 flex-wrap bsm:flex-nowrap justify-start ">
-              
-              <div className='w-fit bsm:w-1/2'>
-                  <span className='text-base font-medium'>Guardian's Name: </span>
-                  <span className='text-base font-normal'>Olayinka Sobowale</span>
-              </div>
-              {/*Last Name */}
-             <div  className='w-fit bsm:w-1/2 '>
-                  <span className='text-base font-medium'>Guardian's Email: </span>
-                  <span className='text-base font-normal'>example@gmail.com</span>
-              </div>
-
-         
-          </div>
+           
           {/*Guardians contact and relationship */}
           <div className="flex px-1 w-full gap-2 flex-wrap bsm:flex-nowrap justify-start ">
               
               <div className='w-fit bsm:w-1/2'>
-                  <span className='text-base font-medium'>Guardian's Contact: </span>
+                  <span className='text-base font-medium'>Emergency Contact: </span>
                   <span className='text-base font-normal'>+23480849581836</span>
               </div>
               {/*Last Name */}
              <div  className='w-fit bsm:w-1/2 '>
                   <span className='text-base font-medium'>Relationship: </span>
-                  <span className='text-base font-normal'>Uncle</span>
+                  <span className='text-base font-normal'>Spouse</span>
               </div>
 
          
@@ -164,7 +150,7 @@ function page() {
                  {/*TODO Id card and buttonss */}
                 <div>
                     {/*TODO Id card image */}
-                    <div className='flex flex-col gap-4 md:flex-row w-full items-center mt-4'>
+                    <div className='flex flex-col gap-4 md:flex-row mt-10 md:justify-center w-full md:gap-8 items-center md:mt-10'>
                     {/*ID CARD FRONT-PAGE */}
                         <div className=' w-[300px] h-[510px] rounded-lg shadow-lg border bg-frontpage px-5 flex flex-col items-center py-4'>
                            
@@ -186,18 +172,15 @@ function page() {
                                 
                             </div>
                             {/*Name and Tag */}
-                            <div className='mt-6 flex flex-col items-center '>
-                                <h2 className='font-serif text-center  font-semibold' >ABIOLA DANIEL OGUNSOLA</h2>
+                           <div className='mt-6 flex flex-col items-center '>
+                                <h2 className='font-serif text-center  font-semibold' >ABIOLA  OGUNSOLA</h2>
                                 <p className='px-4 py-1 mt-2.5 text-sm flex items-center gap-1.5 font-semibold bg-black text-white rounded-full'>
-                                   <span><PiStudentLight/></span>
-                                    <span>STUDENT</span>
-                                    <span><PiStudentLight/></span>
-                                
+                                    <span>TEACHER</span>
                                 </p>
                             </div>
 
                             {/*Qr code */}
-                            <div className='mt-2 w-[160px]'>
+                            <div className='mt-2 w-[140px]'>
                                  <Image alt='qrcode' src={qrcode} width={500} height={500}/>
                             </div>
 
@@ -226,7 +209,7 @@ function page() {
 
 
                         {/*ID CARD BACK-PAGE */}
-                        <div className=' w-[300px] h-[520px]  text-black items-center px-4 py-4 flex flex-col rounded-lg shadow-lg border bg-frontpage'>
+                        <div className=' w-[300px] h-[510px]  text-black items-center px-4 py-4 flex flex-col rounded-lg shadow-lg border bg-frontpage'>
                          {/*Logo */}
                             <div className= 'flex z-20 items-center'>
                                 <div className='w-14 '>
@@ -237,10 +220,10 @@ function page() {
                             {/*Body */}
                             <div className='mt-2 z-20'>
                                 <ul className='text-xs px-5  font-semibold flex flex-col gap-2 list-disc font-sans'>
-                                    <li>Students must wear their ID cards visibly during school hours.</li>
-                                    <li>Do not alter, deface, or misuse your ID card.</li>
-                                    <li>Use your ID card for access to school facilities and events. Sharing or using another student's ID is prohibited.</li>
-                                    <li>Treat your ID card as an important part of school identification. Keep it safe and in good condition.</li>
+                                    <li>Lecturers must display their ID cards at all times while on campus and during school-related activities.</li>
+                                    <li>Immediately report any lost or stolen ID cards to the administration office. A fee may be charged for replacements</li>
+                                    <li>Use your ID card for access to classrooms, offices, and other restricted areas.</li>
+                                    <li>ID cards should be treated with respect as part of your professional identity. Keep them in good condition.</li>
                                     <li>Ensure that your ID is worn in accordance with the school dress code policy.</li>
                                     <li>Failure to follow ID card rules may result in disciplinary measures.</li>
                                 </ul>
@@ -277,6 +260,9 @@ function page() {
                         <button className="text-sm flex items-center bg-blue-500 px-2.5 py-1.5 rounded-lg hover:opacity-65 gap-x-0.5 text-white font-medium" title='download as *pdf' type="button"><span><BiSolidFilePdf/></span>download as pdf</button>
                         <button className="text-sm flex items-center bg-blue-500 px-2.5 py-1.5 rounded-lg hover:opacity-65 gap-x-0.5 text-white font-medium" title='download as *img' type="button"><span><FaDownload/></span>download as img</button>
                     </div>
+
+
+
                 </div>
          </div>
 

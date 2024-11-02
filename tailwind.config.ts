@@ -10,6 +10,8 @@ const config: Config = {
     extend: {
       backgroundImage: {
         "diagonal-gray-white": "linear-gradient(135deg, #ffffff, #808080)", // 135deg creates a diagonal gradient
+        "frontpage": "url('../public/assets/images/Idcard.png')",
+        "logobg": "url('../public/assets/images/logo.png')"
       },
     },
     screens: {
