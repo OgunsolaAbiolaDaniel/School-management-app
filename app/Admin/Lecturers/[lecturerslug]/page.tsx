@@ -118,10 +118,7 @@ function page() {
           {/**Year and Courses offering */}
           <div className="flex px-1 w-full gap-2 flex-wrap bsm:flex-nowrap justify-start ">
               
-              <div className='w-fit bsm:w-1/2'>
-                  <span className='text-base font-medium'>Year: </span>
-                  <span className='text-base font-normal'>Year 1</span>
-              </div>
+           
               {/*Last Name */}
              <div  className='w-fit bsm:w-1/2 '>
                   <span className='text-base font-medium'>Course Offering: </span>

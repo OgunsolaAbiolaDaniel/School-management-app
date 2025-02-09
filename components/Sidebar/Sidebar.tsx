@@ -11,8 +11,10 @@ import { BsMoonStars } from "react-icons/bs";
 import {  IoChevronForwardSharp } from "react-icons/io5";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import logo from '@/public/assets/images/logo.png'
+import Link from 'next/link';
 import {motion} from "framer-motion"
-function Sidebar({ onClose, statecheck }: { onClose: any; statecheck :any}) {
+function Sidebar({ onClose, statecheck }: { onClose: any; statecheck: any }) {
+  
   return (
     <motion.div
       initial={{ x: "-100%" }} // Start hidden off-screen to the left
@@ -44,7 +46,7 @@ function Sidebar({ onClose, statecheck }: { onClose: any; statecheck :any}) {
 
           <div className="justify-self-center text-zinc-600 font-semibold">
             <ul className="flex flex-col gap-4">
-              <li className="flex items-center hover:shadow-md justify-between px-3 pr-2 py-2 font-mono hover:bg-gradient-to-br to-zinc-300 from-white rounded-lg active:bg-zinc-100">
+             <li><Link href='./Dashboard' onClick={onClose} className="flex items-center hover:shadow-md justify-between px-3 pr-2 py-2 font-mono hover:bg-gradient-to-br to-zinc-300 from-white rounded-lg active:bg-zinc-100">
                 <div className="flex items-center gap-2">
                   <span className="text-base text-black">
                     <RxDashboard />
@@ -55,33 +57,33 @@ function Sidebar({ onClose, statecheck }: { onClose: any; statecheck :any}) {
                 <span className="text-xs ">
                   <IoChevronForwardSharp />
                 </span>
-              </li>
+              </Link></li> 
 
-              <li className="flex items-center hover:shadow-md justify-between px-3 pr-2 py-2 font-mono hover:bg-gradient-to-br to-zinc-300 from-white rounded-lg">
+              <li><Link href='./Lecturers' onClick={onClose} className="flex items-center hover:shadow-md justify-between px-3 pr-2 py-2 font-mono hover:bg-gradient-to-br to-zinc-300 from-white rounded-lg">
                 <div className="flex items-center gap-2">
                   <span className="text-base text-black">
                     <GiTeacher />
                   </span>
-                  <span className="text-sm">Lecturers</span>{" "}
+                  <span className="text-sm">Lecturers</span>
                 </div>
 
                 <span className="text-xs">
                   <IoChevronForwardSharp />
                 </span>
-              </li>
-              <li className="flex items-center hover:shadow-md justify-between px-3 pr-2 py-2 font-mono hover:bg-gradient-to-br to-zinc-300 from-white rounded-lg">
+              </Link></li>
+             <li><Link href='./Student' onClick={onClose} className="flex items-center hover:shadow-md justify-between px-3 pr-2 py-2 font-mono hover:bg-gradient-to-br to-zinc-300 from-white rounded-lg">
                 <div className="flex items-center gap-2">
                   <span className="text-base text-black">
                     <PiStudentDuotone />
                   </span>
-                  <span className="text-sm">Students</span>{" "}
+                  <span className="text-sm">Students</span>
                 </div>
 
                 <span className="text-xs">
                   <IoChevronForwardSharp />
                 </span>
-              </li>
-              <li className="flex items-center hover:shadow-md justify-between  px-3 pr-2 py-2 font-mono hover:bg-gradient-to-br to-zinc-300 from-white rounded-lg">
+              </Link></li> 
+             <li> <Link href='./Chat' onClick={onClose} className="flex items-center hover:shadow-md justify-between  px-3 pr-2 py-2 font-mono hover:bg-gradient-to-br to-zinc-300 from-white rounded-lg">
                 <div className="flex items-center gap-2">
                   <span className="text-base text-black">
                     <IoChatbubbleEllipsesOutline />
@@ -92,15 +94,15 @@ function Sidebar({ onClose, statecheck }: { onClose: any; statecheck :any}) {
                 <span className="text-xs bg-yellow-500 py-1 px-2 rounded-lg">
                   4
                 </span>
-              </li>
-              <li className="flex items-center hover:shadow-md justify-between mt-5 px-3 pr-2 py-2 font-mono hover:bg-gradient-to-br to-zinc-300 from-white rounded-lg">
+              </Link></li>
+             <li> <Link href={''} className="flex items-center hover:shadow-md justify-between mt-5 px-3 pr-2 py-2 font-mono hover:bg-gradient-to-br to-zinc-300 from-white rounded-lg">
                 <div className="flex items-center gap-2">
                   <span className="text-base">
                     <RiUserSettingsLine />
                   </span>
                   <span className="text-sm">Account settings</span>{" "}
                 </div>
-              </li>
+              </Link></li>
             </ul>
           </div>
         </div>

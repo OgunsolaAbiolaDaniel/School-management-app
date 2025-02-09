@@ -11,7 +11,7 @@ function Dashboardcard({
   mainclass,
 }: {
   title: string;
-  main: string;
+  main: number;
   icon: any;
   svgclass: string;
   color: string;

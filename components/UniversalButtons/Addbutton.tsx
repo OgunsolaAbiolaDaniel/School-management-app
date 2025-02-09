@@ -1,6 +1,6 @@
 import React from 'react'
 import { IoAddOutline } from "react-icons/io5";
-function Addbutton({click}:{click:any}) {
+function Addbutton({click,text}:{click:any,text:string}) {
   return (
     <button
       title="Generate Code button"
@@ -11,7 +11,7 @@ function Addbutton({click}:{click:any}) {
       <span className="text-base">
     <IoAddOutline />
       </span>
-      <span>Add Course</span>
+      <span>{text}</span>
     </button>
   );
 }

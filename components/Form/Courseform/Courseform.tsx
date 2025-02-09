@@ -1,41 +1,30 @@
-
+'use client'
 import React from 'react'
 import { BiBookAdd } from "react-icons/bi";
-import Input from '../Input/Input';
+import Input from '../../Input/Input';
 import Select from "react-select";
 import options from './dummydata'
 import {secoptions} from './dummydata'
-import GenerateButton from '../UniversalButtons/GenerateButton';
-import Addbutton from '../UniversalButtons/Addbutton';
+import GenerateButton from '../../UniversalButtons/GenerateButton';
+import Addbutton from '../../UniversalButtons/Addbutton';
+import { useState, useReducer } from 'react';
+import { Allcontext, storeReducer } from '@/app/Admin/Store/Store';
+import customStyles from '@/components/Form/customStyles'
 
-const customStyles = {
-  control: (provided: any) => ({
-    ...provided,
-    minHeight: "30px", // Default height
-    fontSize: "12px", // Default font size for selected value
-  }),
-  placeholder: (provided: any) => ({
-    ...provided,
-    fontSize: "14px", // Font size for placeholder
-  }),
-  singleValue: (provided: any) => ({
-    ...provided,
-    fontSize: "14px", // Font size for selected value
-  }),
-  input: (provided: any) => ({
-    ...provided,
-    fontSize: "14px", // Font size for input text
-  }),
-  option: (provided: any) => ({
-    ...provided,
-    fontSize: "14px", // Font size for dropdown options
-  }),
-  menu: (provided: any) => ({
-    ...provided,
-    fontSize: "14px", // Font size for menu items
-  }),
-};
+
+
+
 function Courseform() {
+  const [state, dispatch] = useReducer(storeReducer, Allcontext);
+
+  const [course, setCourse] = useState("");
+  
+
+
+
+
+
+
   return (
     <div className="border shadow-md w-full rounded-lg py-2">
       <form
@@ -51,7 +40,7 @@ function Courseform() {
           </span>
         </div>
         <div className="px-4 flex flex-col gap-2 items-center w-85%">
-          <Input label={"Course Name"} title={"course name"} type={"text"} />
+          <Input label={"Course Name"} title={"course name"} type={"text"} value={undefined} />
           <div className="mb-2 w-full">
             <Select
               options={options}
@@ -73,10 +62,10 @@ function Courseform() {
             <div className="border border-zinc-400  px-3 py-1.5 text-sm">
               #0000
             </div>
-            <GenerateButton click="" title={'Code'} />
+            <GenerateButton click={""} title={'Code'} />
           </div>
           <div className="mb-1 py-1.5">
-            <Addbutton click="" />
+            <Addbutton text='Add Course' click="" />
           </div>
         </div>
       </form>

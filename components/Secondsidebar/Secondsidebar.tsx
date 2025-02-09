@@ -9,6 +9,7 @@ import { PiStudentDuotone } from 'react-icons/pi';
 import Image from 'next/image';
 import logo from '@/public/assets/images/logo.png'
 import { RiMenu3Line, RiUserSettingsLine } from 'react-icons/ri';
+import Link from 'next/link';
 import { RxDashboard } from 'react-icons/rx';
 
 function Secondsidebar() {
@@ -79,11 +80,13 @@ function Secondsidebar() {
             <ul
               className={
                 opensidebar
-                  ? "flex flex-col gap-4 items-center"
+                  ? "flex flex-col gap-4 "
                   : "w-fit flex flex-col  gap-4 items-center"
               }
             >
-              <li
+              <li>
+                <Link
+                  href='./Dashboard'
                 className={
                   opensidebar
                     ? "flex items-center hover:shadow-md justify-between w-full px-3 pr-2 py-2 font-mono hover:bg-gradient-to-br to-zinc-300 from-white rounded-lg active:bg-zinc-100"
@@ -104,9 +107,11 @@ function Secondsidebar() {
                     <IoChevronForwardSharp />
                   </span>
                 )}
-              </li>
-
-              <li
+                </Link></li>
+              
+              <li>
+                <Link 
+                  href='./Lecturers'
                 className={
                   opensidebar
                     ? "flex items-center hover:shadow-md w-full justify-between px-3 pr-2 py-2 font-mono hover:bg-gradient-to-br to-zinc-300 from-white rounded-lg"
@@ -126,8 +131,10 @@ function Secondsidebar() {
                     <IoChevronForwardSharp />
                   </span>
                 )}
-              </li>
-              <li
+                </Link></li>
+              <li>
+                <Link
+                  href='./Student'
                 className={
                   opensidebar
                     ? "flex items-center hover:shadow-md justify-between w-full px-3 pr-2 py-2 font-mono hover:bg-gradient-to-br to-zinc-300 from-white rounded-lg"
@@ -148,8 +155,9 @@ function Secondsidebar() {
                     <IoChevronForwardSharp />
                   </span>
                 )}
-              </li>
-              <li
+              </Link></li>
+
+              <li><Link href='./Chat'
                 className={
                   opensidebar
                     ? "flex items-center hover:shadow-md justify-between px-3 w-full pr-2 py-2 font-mono hover:bg-gradient-to-br to-zinc-300 from-white rounded-lg"
@@ -170,8 +178,9 @@ function Secondsidebar() {
                     4
                   </span>
                 )}
-              </li>
-              <li
+              </Link></li>
+              <li>
+                <Link href={''}
                 className={
                   opensidebar
                     ? "flex items-center hover:shadow-md justify-between mt-5 w-full px-3 pr-2 py-2 font-mono hover:bg-gradient-to-br to-zinc-300 from-white rounded-lg"
@@ -188,7 +197,8 @@ function Secondsidebar() {
                     <span className="text-sm">Account settings</span>
                   )}{" "}
                 </div>
-              </li>
+              </Link></li>
+
             </ul>
           </div>
         </div>
