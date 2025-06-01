@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { ChangeEvent } from 'react'
 
-function Input({ label, title, type, max,}: { label: string; title: string; type: string;  max?:number}) {
+function Input({ label, title, type, max, onChange, value }: { label: string; title: string; type: string; max?: number; onChange?: React.ChangeEventHandler<HTMLInputElement>; value:any}) {
   return (
     <div className="mb-2 w-full">
       <label className="relative w-full">
         <input
+          value={value}
           title={title.toLowerCase()}
           type={type.toLowerCase()}
           max={max}
+          onChange={onChange}
           min={1}
           required
           autoComplete='off'

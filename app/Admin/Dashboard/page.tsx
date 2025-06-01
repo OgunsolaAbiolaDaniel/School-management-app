@@ -2,8 +2,8 @@
 import React from 'react'
 import Firstsection from '@/components/Firstsection/Firstsection';
 import Attendancetable from '@/components/Table/Attendancetable';
-import Courseform from '@/components/Courseform/Courseform';
-import Facultyform from '@/components/Facultyform/Facultyform';
+import Courseform from '@/components/Form/Courseform/Courseform';
+import Facultyform from '@/components/Form/Facultyform/Facultyform';
 function page() {
   return (
     <div className="flex flex-col gap-5 p-2 w-full">

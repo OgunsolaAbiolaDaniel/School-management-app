@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Input from '../Input/Input';
 import Select from "react-select";
@@ -8,36 +9,9 @@ import profileimg from '@/public/assets/images/profileimg.png'
 import Image from 'next/image';
 import PickImagebutton from '../UniversalButtons/PickImagebutton';
 import Addformbtn from '../UniversalButtons/Addformbtn';
+import customStyles from '@/components/Form/customStyles';
 
 
-
-const customStyles = {
-  control: (provided: any) => ({
-    ...provided,
-    minHeight: "30px", // Default height
-    fontSize: "12px", // Default font size for selected value
-  }),
-  placeholder: (provided: any) => ({
-    ...provided,
-    fontSize: "14px", // Font size for placeholder
-  }),
-  singleValue: (provided: any) => ({
-    ...provided,
-    fontSize: "14px", // Font size for selected value
-  }),
-  input: (provided: any) => ({
-    ...provided,
-    fontSize: "14px", // Font size for input text
-  }),
-  option: (provided: any) => ({
-    ...provided,
-    fontSize: "14px", // Font size for dropdown options
-  }),
-  menu: (provided: any) => ({
-    ...provided,
-    fontSize: "14px", // Font size for menu items
-  }),
-};
 
 function AddLecturerForm() {
     
