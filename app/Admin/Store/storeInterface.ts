@@ -26,6 +26,7 @@ interface DeparmentI{
 };
 interface CoursesI{
     id: string;
+    name: string;
     facultyid: string;
     departmentid: string;
     crscod: string;

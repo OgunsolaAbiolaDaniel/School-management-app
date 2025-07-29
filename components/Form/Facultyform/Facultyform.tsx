@@ -3,13 +3,13 @@ import React, { useState,useReducer,useEffect } from "react";
 import Input from "../../Input/Input";
 import Addbutton from "../../UniversalButtons/Addbutton";
 import { BiSolidSchool } from "react-icons/bi";
-import { storeReducer, Allcontext } from "@/app/Admin/Store/Store";
+import { useStore } from "@/app/Admin/Store/Store";
 import { v4 as uuidv4 } from 'uuid';
 import Departmentform from "../Departmentform/Departmentform";
 
 
 function Facultyform() {
-  const [state, dispatch] = useReducer(storeReducer, Allcontext);
+  const {storeState, storeDispatch }= useStore();
   const [facultyName, setFacultyName] = useState("");
 
 
@@ -22,7 +22,7 @@ function Facultyform() {
 
   function addFaculty() {
     if (facultyName.trim() !== "") {
-      dispatch({
+      storeDispatch({
         type: 'ADD_FACULTY',
         payload: {
           id: uuidv4(),
@@ -32,22 +32,14 @@ function Facultyform() {
         }
    })
     }
+
     setFacultyName("");
-
   }
-
- 
-
-  
   
   
   return (
     <div className="border w-full shadow-md flex flex-col items-center rounded-lg py-2">
-      <form
-        action="#"
-        onSubmit={(event) => {
-          event.preventDefault();
-        }}
+      <div
         className="border-b mb-4 py-2"
       >
         <div className="flex items-center justify-center gap-1  font-medium text-md px-2.5 py-3 mb-4">
@@ -63,22 +55,13 @@ function Facultyform() {
             <Addbutton text="Add Faculty" click={addFaculty} />
           </div>
         </div>
-      </form>
+      </div>
 
-      <form
-        action="#"
-        onSubmit={(event) => {
-          event.preventDefault();
-        }}
-        className="py-2"
+      <div className="py-2"
       >
-        <Departmentform faculties={state.faculty} />
-        
-      </form>
+        <Departmentform/>
+      </div>
 
-      <div>{state.faculty.map((item) => {
-      return  <li key={item.id}>{item.name}</li>;
-      })}</div>
     </div>
   );
 }

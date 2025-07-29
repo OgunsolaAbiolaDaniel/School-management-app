@@ -1,15 +1,15 @@
 'use client'
-import { createContext, ReactNode, useReducer } from "react";
+import { createContext, ReactNode, useReducer,useContext } from "react";
 import AllcontextI from "./storeInterface";
-import { dummyData } from "./dummydata";
+import dummyData  from "./dummydata";
 
 export const Allcontext: AllcontextI = {
-    users: [],
-    student: [],
-    lecturer: [],
-    courses: [],
-    faculty: [],
-    department: []
+    users: dummyData.users,
+    student: dummyData.student,
+    lecturer: dummyData.lecturer,
+    courses: dummyData.courses,
+    faculty: dummyData.faculty,
+    department: dummyData.department
 }
 
 
@@ -46,7 +46,7 @@ export function storeReducer(state: AllcontextI, action:{ type: string; payload?
        case 'ADD_DEPARTMENT':
              return {
            ...state,
-                faculty:[...state.department,action.payload],
+                department:[...state.department,action.payload],
           }
     default:
         return state;
@@ -54,8 +54,10 @@ export function storeReducer(state: AllcontextI, action:{ type: string; payload?
 }
 
 
-export const Storeresources = createContext(Allcontext); 
-
+export const Storeresources = createContext<{
+  storeState: AllcontextI;
+  storeDispatch: React.Dispatch<{ type: string; payload?: any }>;
+} | undefined>(undefined);
 
 
 const StoreProvider = ({ children }: { children: ReactNode }) => {
@@ -64,14 +66,17 @@ const StoreProvider = ({ children }: { children: ReactNode }) => {
 
 
     return (
-        <Storeresources.Provider value={storeState}>
+        <Storeresources.Provider value={{storeState,storeDispatch}}>
           {children}
         </Storeresources.Provider>
     )
 }
 
 
-
-
-
 export default StoreProvider;
+
+export function useStore() {
+  const context = useContext(Storeresources);
+  if (!context) throw new Error('useStore must be used inside StoreProvider');
+  return context;
+}

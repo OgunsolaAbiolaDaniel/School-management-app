@@ -1,6 +1,1088 @@
 import AllcontextI from "./storeInterface";
 import { v4 as uuidv4 } from 'uuid';
-export const dummyData: AllcontextI = {
+
+
+const facultyList= [
+  {
+    id: uuidv4(),
+    name: "Faculty of Arts",
+    value: "Faculty of Arts",
+    label: "Faculty of Arts",
+  },
+  {
+    id: uuidv4(),
+    name: "Faculty of Engineering",
+    value: "Faculty of Engineering",
+    label: "Faculty of Engineering",
+  },
+  {
+    id: uuidv4(),
+    name: "Faculty of Business",
+    value: "Faculty of Business",
+    label: "Faculty of Business",
+  },
+  {
+    id: uuidv4(),
+    name: "Faculty of Education",
+    value: "Faculty of Education",
+    label: "Faculty of Education",
+  },
+  {
+    id: uuidv4(),
+    name: "Faculty of Medicine",
+    value: "Faculty of Medicine",
+    label: "Faculty of Medicine",
+  },
+  {
+    id: uuidv4(),
+    name: "Faculty of Law",
+    value: "Faculty of Law",
+    label: "Faculty of Law",
+  },
+  {
+    id: uuidv4(),
+    name: "Faculty of Social Sciences",
+    value: "Faculty of Social Sciences",
+    label: "Faculty of Social Sciences",
+  },
+  {
+    id: uuidv4(),
+    name: "Faculty of Agriculture",
+    value: "Faculty of Agriculture",
+    label: "Faculty of Agriculture",
+  },
+  {
+    id: uuidv4(),
+    name: "Faculty of Fine Arts",
+    value: "Faculty of Fine Arts",
+    label: "Faculty of Fine Arts",
+  },
+  {
+    id: uuidv4(),
+    name: "Faculty of Environmental Studies",
+    value: "Faculty of Environmental Studies",
+    label: "Faculty of Environmental Studies",
+  },
+];
+const departmentList = [
+  // Faculty of Arts (index 0)
+  {
+    id: uuidv4(),
+    facultyid: facultyList[0]?.id,
+    name: "English Literature",
+    value: "English Literature",
+    label: "English Literature",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[0]?.id,
+    name: "History",
+    value: "History",
+    label: "History",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[0]?.id,
+    name: "Philosophy",
+    value: "Philosophy",
+    label: "Philosophy",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[0]?.id,
+    name: "Languages and Linguistics",
+    value: "Languages and Linguistics",
+    label: "Languages and Linguistics",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[0]?.id,
+    name: "Theology and Religious Studies",
+    value: "Theology and Religious Studies",
+    label: "Theology and Religious Studies",
+  },
+
+  // Faculty of Engineering (index 1)
+  {
+    id: uuidv4(),
+    facultyid: facultyList[1]?.id,
+    name: "Mechanical Engineering",
+    value: "Mechanical Engineering",
+    label: "Mechanical Engineering",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[1]?.id,
+    name: "Electrical & Electronics Engineering",
+    value: "Electrical & Electronics Engineering",
+    label: "Electrical & Electronics Engineering",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[1]?.id,
+    name: "Civil Engineering",
+    value: "Civil Engineering",
+    label: "Civil Engineering",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[1]?.id,
+    name: "Chemical Engineering",
+    value: "Chemical Engineering",
+    label: "Chemical Engineering",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[1]?.id,
+    name: "Computer Engineering",
+    value: "Computer Engineering",
+    label: "Computer Engineering",
+  },
+
+  // Faculty of Business (index 2)
+  {
+    id: uuidv4(),
+    facultyid: facultyList[2]?.id,
+    name: "Business Administration",
+    value: "Business Administration",
+    label: "Business Administration",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[2]?.id,
+    name: "Accounting",
+    value: "Accounting",
+    label: "Accounting",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[2]?.id,
+    name: "Banking & Finance",
+    value: "Banking & Finance",
+    label: "Banking & Finance",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[2]?.id,
+    name: "Marketing",
+    value: "Marketing",
+    label: "Marketing",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[2]?.id,
+    name: "Entrepreneurship",
+    value: "Entrepreneurship",
+    label: "Entrepreneurship",
+  },
+
+  // Faculty of Education (index 3)
+  {
+    id: uuidv4(),
+    facultyid: facultyList[3]?.id,
+    name: "Educational Foundations",
+    value: "Educational Foundations",
+    label: "Educational Foundations",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[3]?.id,
+    name: "Curriculum & Instruction",
+    value: "Curriculum & Instruction",
+    label: "Curriculum & Instruction",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[3]?.id,
+    name: "Guidance and Counselling",
+    value: "Guidance and Counselling",
+    label: "Guidance and Counselling",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[3]?.id,
+    name: "Educational Psychology",
+    value: "Educational Psychology",
+    label: "Educational Psychology",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[3]?.id,
+    name: "Special Education",
+    value: "Special Education",
+    label: "Special Education",
+  },
+
+  // Faculty of Medicine (index 4)
+  {
+    id: uuidv4(),
+    facultyid: facultyList[4]?.id,
+    name: "Anatomy",
+    value: "Anatomy",
+    label: "Anatomy",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[4]?.id,
+    name: "Physiology",
+    value: "Physiology",
+    label: "Physiology",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[4]?.id,
+    name: "Pathology",
+    value: "Pathology",
+    label: "Pathology",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[4]?.id,
+    name: "Biomedical Science",
+    value: "Biomedical Science",
+    label: "Biomedical Science",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[4]?.id,
+    name: "Community Medicine",
+    value: "Community Medicine",
+    label: "Community Medicine",
+  },
+
+  // Faculty of Law (index 5)
+  {
+    id: uuidv4(),
+    facultyid: facultyList[5]?.id,
+    name: "Public Law",
+    value: "Public Law",
+    label: "Public Law",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[5]?.id,
+    name: "Private Law",
+    value: "Private Law",
+    label: "Private Law",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[5]?.id,
+    name: "Commercial and Industrial Law",
+    value: "Commercial and Industrial Law",
+    label: "Commercial and Industrial Law",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[5]?.id,
+    name: "International Law and Jurisprudence",
+    value: "International Law and Jurisprudence",
+    label: "International Law and Jurisprudence",
+  },
+
+  // Faculty of Social Sciences (index 6)
+  {
+    id: uuidv4(),
+    facultyid: facultyList[6]?.id,
+    name: "Sociology",
+    value: "Sociology",
+    label: "Sociology",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[6]?.id,
+    name: "Psychology",
+    value: "Psychology",
+    label: "Psychology",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[6]?.id,
+    name: "Political Science",
+    value: "Political Science",
+    label: "Political Science",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[6]?.id,
+    name: "Economics",
+    value: "Economics",
+    label: "Economics",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[6]?.id,
+    name: "Mass Communication",
+    value: "Mass Communication",
+    label: "Mass Communication",
+  },
+
+  // Faculty of Agriculture (index 7)
+  {
+    id: uuidv4(),
+    facultyid: facultyList[7]?.id,
+    name: "Animal Science",
+    value: "Animal Science",
+    label: "Animal Science",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[7]?.id,
+    name: "Crop Protection",
+    value: "Crop Protection",
+    label: "Crop Protection",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[7]?.id,
+    name: "Soil Science",
+    value: "Soil Science",
+    label: "Soil Science",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[7]?.id,
+    name: "Agricultural Extension",
+    value: "Agricultural Extension",
+    label: "Agricultural Extension",
+  },
+
+  // Faculty of Fine Arts (index 8)
+  {
+    id: uuidv4(),
+    facultyid: facultyList[8]?.id,
+    name: "Theatre Arts",
+    value: "Theatre Arts",
+    label: "Theatre Arts",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[8]?.id,
+    name: "Music",
+    value: "Music",
+    label: "Music",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[8]?.id,
+    name: "Creative Arts",
+    value: "Creative Arts",
+    label: "Creative Arts",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[8]?.id,
+    name: "Dance",
+    value: "Dance",
+    label: "Dance",
+  },
+
+  // Faculty of Environmental Studies (index 9)
+  {
+    id: uuidv4(),
+    facultyid: facultyList[9]?.id,
+    name: "Environmental Management",
+    value: "Environmental Management",
+    label: "Environmental Management",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[9]?.id,
+    name: "Urban and Regional Planning",
+    value: "Urban and Regional Planning",
+    label: "Urban and Regional Planning",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[9]?.id,
+    name: "Geography and Environmental Science",
+    value: "Geography and Environmental Science",
+    label: "Geography and Environmental Science",
+  },
+  {
+    id: uuidv4(),
+    facultyid: facultyList[9]?.id,
+    name: "Landscape Architecture",
+    value: "Landscape Architecture",
+    label: "Landscape Architecture",
+  },
+];
+const courseList = [
+  // Faculty of Arts (index 0)
+  // English Literature - departmentList[0]
+  {
+    id: uuidv4(),
+    name: "Introduction to Literary Studies",
+    facultyid: facultyList[0]?.id,
+    departmentid: departmentList[0]?.id,
+    crscod: "ENG101",
+    value: "Introduction to Literary Studies",
+    label: "Introduction to Literary Studies",
+  },
+  {
+    id: uuidv4(),
+    name: "Poetry Analysis",
+    facultyid: facultyList[0]?.id,
+    departmentid: departmentList[0]?.id,
+    crscod: "ENG102",
+    value: "Poetry Analysis",
+    label: "Poetry Analysis",
+  },
+  {
+    id: uuidv4(),
+    name: "Shakespearean Drama",
+    facultyid: facultyList[0]?.id,
+    departmentid: departmentList[0]?.id,
+    crscod: "ENG201",
+    value: "Shakespearean Drama",
+    label: "Shakespearean Drama",
+  },
+  {
+    id: uuidv4(),
+    name: "19th Century British Literature",
+    facultyid: facultyList[0]?.id,
+    departmentid: departmentList[0]?.id,
+    crscod: "ENG202",
+    value: "19th Century British Literature",
+    label: "19th Century British Literature",
+  },
+  {
+    id: uuidv4(),
+    name: "Modernist Fiction",
+    facultyid: facultyList[0]?.id,
+    departmentid: departmentList[0]?.id,
+    crscod: "ENG203",
+    value: "Modernist Fiction",
+    label: "Modernist Fiction",
+  },
+  {
+    id: uuidv4(),
+    name: "Contemporary African Literature",
+    facultyid: facultyList[0]?.id,
+    departmentid: departmentList[0]?.id,
+    crscod: "ENG204",
+    value: "Contemporary African Literature",
+    label: "Contemporary African Literature",
+  },
+  {
+    id: uuidv4(),
+    name: "Narrative Theory",
+    facultyid: facultyList[0]?.id,
+    departmentid: departmentList[0]?.id,
+    crscod: "ENG301",
+    value: "Narrative Theory",
+    label: "Narrative Theory",
+  },
+  {
+    id: uuidv4(),
+    name: "Postcolonial Literature",
+    facultyid: facultyList[0]?.id,
+    departmentid: departmentList[0]?.id,
+    crscod: "ENG302",
+    value: "Postcolonial Literature",
+    label: "Postcolonial Literature",
+  },
+  {
+    id: uuidv4(),
+    name: "Literature and Gender",
+    facultyid: facultyList[0]?.id,
+    departmentid: departmentList[0]?.id,
+    crscod: "ENG303",
+    value: "Literature and Gender",
+    label: "Literature and Gender",
+  },
+  {
+    id: uuidv4(),
+    name: "Advanced Critical Reading",
+    facultyid: facultyList[0]?.id,
+    departmentid: departmentList[0]?.id,
+    crscod: "ENG304",
+    value: "Advanced Critical Reading",
+    label: "Advanced Critical Reading",
+  },
+
+  // History - departmentList[1]
+  {
+    id: uuidv4(),
+    name: "Ancient Civilizations",
+    facultyid: facultyList[0]?.id,
+    departmentid: departmentList[1]?.id,
+    crscod: "HIS101",
+    value: "Ancient Civilizations",
+    label: "Ancient Civilizations",
+  },
+  {
+    id: uuidv4(),
+    name: "Medieval Europe",
+    facultyid: facultyList[0]?.id,
+    departmentid: departmentList[1]?.id,
+    crscod: "HIS102",
+    value: "Medieval Europe",
+    label: "Medieval Europe",
+  },
+  {
+    id: uuidv4(),
+    name: "History of Africa",
+    facultyid: facultyList[0]?.id,
+    departmentid: departmentList[1]?.id,
+    crscod: "HIS201",
+    value: "History of Africa",
+    label: "History of Africa",
+  },
+  {
+    id: uuidv4(),
+    name: "World War Studies",
+    facultyid: facultyList[0]?.id,
+    departmentid: departmentList[1]?.id,
+    crscod: "HIS202",
+    value: "World War Studies",
+    label: "World War Studies",
+  },
+  {
+    id: uuidv4(),
+    name: "Historiography",
+    facultyid: facultyList[0]?.id,
+    departmentid: departmentList[1]?.id,
+    crscod: "HIS203",
+    value: "Historiography",
+    label: "Historiography",
+  },
+  {
+    id: uuidv4(),
+    name: "Colonial and Postcolonial History",
+    facultyid: facultyList[0]?.id,
+    departmentid: departmentList[1]?.id,
+    crscod: "HIS301",
+    value: "Colonial and Postcolonial History",
+    label: "Colonial and Postcolonial History",
+  },
+
+  // Philosophy - departmentList[2]
+  {
+    id: uuidv4(),
+    name: "Introduction to Philosophy",
+    facultyid: facultyList[0]?.id,
+    departmentid: departmentList[2]?.id,
+    crscod: "PHL101",
+    value: "Introduction to Philosophy",
+    label: "Introduction to Philosophy",
+  },
+  {
+    id: uuidv4(),
+    name: "Ethics",
+    facultyid: facultyList[0]?.id,
+    departmentid: departmentList[2]?.id,
+    crscod: "PHL102",
+    value: "Ethics",
+    label: "Ethics",
+  },
+  {
+    id: uuidv4(),
+    name: "Philosophy of Science",
+    facultyid: facultyList[0]?.id,
+    departmentid: departmentList[2]?.id,
+    crscod: "PHL201",
+    value: "Philosophy of Science",
+    label: "Philosophy of Science",
+  },
+  {
+    id: uuidv4(),
+    name: "Logic and Critical Thinking",
+    facultyid: facultyList[0]?.id,
+    departmentid: departmentList[2]?.id,
+    crscod: "PHL202",
+    value: "Logic and Critical Thinking",
+    label: "Logic and Critical Thinking",
+  },
+  
+  // Faculty of Engineering (index 1)
+  // Mechanical Engineering (departmentList[5])
+  {
+    id: uuidv4(),
+    name: "Introduction to Thermodynamics",
+    facultyid: facultyList[1]?.id,
+    departmentid: departmentList[5]?.id,
+    crscod: "MEC101",
+    value: "Introduction to Thermodynamics",
+    label: "Introduction to Thermodynamics",
+  },
+  {
+    id: uuidv4(),
+    name: "Fluid Mechanics",
+    facultyid: facultyList[1]?.id,
+    departmentid: departmentList[5]?.id,
+    crscod: "MEC102",
+    value: "Fluid Mechanics",
+    label: "Fluid Mechanics",
+  },
+  {
+    id: uuidv4(),
+    name: "Dynamics",
+    facultyid: facultyList[1]?.id,
+    departmentid: departmentList[5]?.id,
+    crscod: "MEC202",
+    value: "Dynamics",
+    label: "Dynamics",
+  },
+  {
+    id: uuidv4(),
+    name: "Heat Transfer",
+    facultyid: facultyList[1]?.id,
+    departmentid: departmentList[5]?.id,
+    crscod: "MEC201",
+    value: "Heat Transfer",
+    label: "Heat Transfer",
+  },
+
+  // Electrical Engineering (departmentList[6])
+  {
+    id: uuidv4(),
+    name: "Electric Circuit Theory",
+    facultyid: facultyList[1]?.id,
+    departmentid: departmentList[6]?.id,
+    crscod: "EEE101",
+    value: "Electric Circuit Theory",
+    label: "Electric Circuit Theory",
+  },
+  {
+    id: uuidv4(),
+    name: "Intro to Electronics",
+    facultyid: facultyList[1]?.id,
+    departmentid: departmentList[6]?.id,
+    crscod: "EEE102",
+    value: "Intro to Electronics",
+    label: "Intro to Electronics",
+  },
+  {
+    id: uuidv4(),
+    name: "Microprocessors",
+    facultyid: facultyList[1]?.id,
+    departmentid: departmentList[6]?.id,
+    crscod: "EEE202",
+    value: "Microprocessors",
+    label: "Microprocessors",
+  },
+
+  // Civil Engineering (departmentList[7])
+  {
+    id: uuidv4(),
+    name: "Structural Analysis",
+    facultyid: facultyList[1]?.id,
+    departmentid: departmentList[7]?.id,
+    crscod: "CIV101",
+    value: "Structural Analysis",
+    label: "Structural Analysis",
+  },
+  {
+    id: uuidv4(),
+    name: "Concrete Design",
+    facultyid: facultyList[1]?.id,
+    departmentid: departmentList[7]?.id,
+    crscod: "CIV201",
+    value: "Concrete Design",
+    label: "Concrete Design",
+  },
+  {
+    id: uuidv4(),
+    name: "Construction Technology",
+    facultyid: facultyList[1]?.id,
+    departmentid: departmentList[7]?.id,
+    crscod: "CIV202",
+    value: "Construction Technology",
+    label: "Construction Technology",
+  },
+
+  // Faculty of Business (index 2)
+  // Business Administration (departmentList[10])
+  {
+    id: uuidv4(),
+    name: "Principles of Management",
+    facultyid: facultyList[2]?.id,
+    departmentid: departmentList[10]?.id,
+    crscod: "BUS101",
+    value: "Principles of Management",
+    label: "Principles of Management",
+  },
+  {
+    id: uuidv4(),
+    name: "Organizational Behavior",
+    facultyid: facultyList[2]?.id,
+    departmentid: departmentList[10]?.id,
+    crscod: "BUS102",
+    value: "Organizational Behavior",
+    label: "Organizational Behavior",
+  },
+  {
+    id: uuidv4(),
+    name: "Business Communication",
+    facultyid: facultyList[2]?.id,
+    departmentid: departmentList[10]?.id,
+    crscod: "BUS201",
+    value: "Business Communication",
+    label: "Business Communication",
+  },
+  // (… continued for other departments)
+// Faculty of Education (index 3)
+// Educational Foundations (departmentList[15])
+{
+  id: uuidv4(),
+  name: "Philosophy of Education",
+  facultyid: facultyList[3]?.id,
+  departmentid: departmentList[15]?.id,
+  crscod: "EDF101",
+  value: "Philosophy of Education",
+  label: "Philosophy of Education",
+},
+{
+  id: uuidv4(),
+  name: "Sociology of Education",
+  facultyid: facultyList[3]?.id,
+  departmentid: departmentList[15]?.id,
+  crscod: "EDF102",
+  value: "Sociology of Education",
+  label: "Sociology of Education",
+},
+{
+  id: uuidv4(),
+  name: "History of Education",
+  facultyid: facultyList[3]?.id,
+  departmentid: departmentList[15]?.id,
+  crscod: "EDF201",
+  value: "History of Education",
+  label: "History of Education",
+},
+
+// Curriculum & Instruction (departmentList[16])
+{
+  id: uuidv4(),
+  name: "Curriculum Theories",
+  facultyid: facultyList[3]?.id,
+  departmentid: departmentList[16]?.id,
+  crscod: "CUR301",
+  value: "Curriculum Theories",
+  label: "Curriculum Theories",
+},
+{
+  id: uuidv4(),
+  name: "Instructional Design",
+  facultyid: facultyList[3]?.id,
+  departmentid: departmentList[16]?.id,
+  crscod: "CUR302",
+  value: "Instructional Design",
+  label: "Instructional Design",
+},
+
+// Guidance and Counselling (departmentList[17])
+{
+  id: uuidv4(),
+  name: "Introduction to Guidance",
+  facultyid: facultyList[3]?.id,
+  departmentid: departmentList[17]?.id,
+  crscod: "GDC101",
+  value: "Introduction to Guidance",
+  label: "Introduction to Guidance",
+},
+{
+  id: uuidv4(),
+  name: "Counseling Techniques",
+  facultyid: facultyList[3]?.id,
+  departmentid: departmentList[17]?.id,
+  crscod: "GDC202",
+  value: "Counseling Techniques",
+  label: "Counseling Techniques",
+},
+
+// Educational Psychology (departmentList[18])
+{
+  id: uuidv4(),
+  name: "Child Psychology",
+  facultyid: facultyList[3]?.id,
+  departmentid: departmentList[18]?.id,
+  crscod: "EDP101",
+  value: "Child Psychology",
+  label: "Child Psychology",
+},
+{
+  id: uuidv4(),
+  name: "Cognitive Development",
+  facultyid: facultyList[3]?.id,
+  departmentid: departmentList[18]?.id,
+  crscod: "EDP201",
+  value: "Cognitive Development",
+  label: "Cognitive Development",
+},
+
+// Special Education (departmentList[19])
+{
+  id: uuidv4(),
+  name: "Inclusive Education",
+  facultyid: facultyList[3]?.id,
+  departmentid: departmentList[19]?.id,
+  crscod: "SED101",
+  value: "Inclusive Education",
+  label: "Inclusive Education",
+},
+{
+  id: uuidv4(),
+  name: "Learning Disabilities",
+  facultyid: facultyList[3]?.id,
+  departmentid: departmentList[19]?.id,
+  crscod: "SED202",
+  value: "Learning Disabilities",
+  label: "Learning Disabilities",
+},
+
+// Faculty of Medicine (index 4)
+// Anatomy (departmentList[20])
+{
+  id: uuidv4(),
+  name: "Human Anatomy I",
+  facultyid: facultyList[4]?.id,
+  departmentid: departmentList[20]?.id,
+  crscod: "ANT101",
+  value: "Human Anatomy I",
+  label: "Human Anatomy I",
+},
+{
+  id: uuidv4(),
+  name: "Human Anatomy II",
+  facultyid: facultyList[4]?.id,
+  departmentid: departmentList[20]?.id,
+  crscod: "ANT102",
+  value: "Human Anatomy II",
+  label: "Human Anatomy II",
+},
+
+// Physiology (departmentList[21])
+{
+  id: uuidv4(),
+  name: "General Physiology",
+  facultyid: facultyList[4]?.id,
+  departmentid: departmentList[21]?.id,
+  crscod: "PHY101",
+  value: "General Physiology",
+  label: "General Physiology",
+},
+{
+  id: uuidv4(),
+  name: "Systems Physiology",
+  facultyid: facultyList[4]?.id,
+  departmentid: departmentList[21]?.id,
+  crscod: "PHY202",
+  value: "Systems Physiology",
+  label: "Systems Physiology",
+},
+
+// Pathology (departmentList[22])
+{
+  id: uuidv4(),
+  name: "Pathologic Basis of Disease",
+  facultyid: facultyList[4]?.id,
+  departmentid: departmentList[22]?.id,
+  crscod: "PAT101",
+  value: "Pathologic Basis of Disease",
+  label: "Pathologic Basis of Disease",
+},
+{
+  id: uuidv4(),
+  name: "Laboratory Techniques in Pathology",
+  facultyid: facultyList[4]?.id,
+  departmentid: departmentList[22]?.id,
+  crscod: "PAT201",
+  value: "Laboratory Techniques in Pathology",
+  label: "Laboratory Techniques in Pathology",
+},
+
+// Biomedical Science (departmentList[23])
+{
+  id: uuidv4(),
+  name: "Intro to Biomedical Science",
+  facultyid: facultyList[4]?.id,
+  departmentid: departmentList[23]?.id,
+  crscod: "BMS101",
+  value: "Intro to Biomedical Science",
+  label: "Intro to Biomedical Science",
+},
+{
+  id: uuidv4(),
+  name: "Medical Microbiology",
+  facultyid: facultyList[4]?.id,
+  departmentid: departmentList[23]?.id,
+  crscod: "BMS203",
+  value: "Medical Microbiology",
+  label: "Medical Microbiology",
+},
+
+// Faculty of Law (index 5)
+// Public Law (departmentList[25])
+{
+  id: uuidv4(),
+  name: "Constitutional Law",
+  facultyid: facultyList[5]?.id,
+  departmentid: departmentList[25]?.id,
+  crscod: "LAW101",
+  value: "Constitutional Law",
+  label: "Constitutional Law",
+},
+{
+  id: uuidv4(),
+  name: "Administrative Law",
+  facultyid: facultyList[5]?.id,
+  departmentid: departmentList[25]?.id,
+  crscod: "LAW201",
+  value: "Administrative Law",
+  label: "Administrative Law",
+},
+
+// International Law and Jurisprudence (departmentList[27])
+{
+  id: uuidv4(),
+  name: "Law of Treaties",
+  facultyid: facultyList[5]?.id,
+  departmentid: departmentList[27]?.id,
+  crscod: "LAW301",
+  value: "Law of Treaties",
+  label: "Law of Treaties",
+},
+{
+  id: uuidv4(),
+  name: "International Criminal Law",
+  facultyid: facultyList[5]?.id,
+  departmentid: departmentList[27]?.id,
+  crscod: "LAW302",
+  value: "International Criminal Law",
+  label: "International Criminal Law",
+},
+
+// Faculty of Social Sciences (index 6)
+// Sociology (departmentList[28])
+{
+  id: uuidv4(),
+  name: "Intro to Sociology",
+  facultyid: facultyList[6]?.id,
+  departmentid: departmentList[28]?.id,
+  crscod: "SOC101",
+  value: "Intro to Sociology",
+  label: "Intro to Sociology",
+},
+{
+  id: uuidv4(),
+  name: "Urban Sociology",
+  facultyid: facultyList[6]?.id,
+  departmentid: departmentList[28]?.id,
+  crscod: "SOC203",
+  value: "Urban Sociology",
+  label: "Urban Sociology",
+},
+
+// Psychology (departmentList[29])
+{
+  id: uuidv4(),
+  name: "Intro to Psychology",
+  facultyid: facultyList[6]?.id,
+  departmentid: departmentList[29]?.id,
+  crscod: "PSY101",
+  value: "Intro to Psychology",
+  label: "Intro to Psychology",
+},
+{
+  id: uuidv4(),
+  name: "Social Psychology",
+  facultyid: facultyList[6]?.id,
+  departmentid: departmentList[29]?.id,
+  crscod: "PSY204",
+  value: "Social Psychology",
+  label: "Social Psychology",
+},
+
+// Mass Communication (departmentList[31])
+{
+  id: uuidv4(),
+  name: "Intro to Mass Media",
+  facultyid: facultyList[6]?.id,
+  departmentid: departmentList[31]?.id,
+  crscod: "COM101",
+  value: "Intro to Mass Media",
+  label: "Intro to Mass Media",
+},
+{
+  id: uuidv4(),
+  name: "Public Relations",
+  facultyid: facultyList[6]?.id,
+  departmentid: departmentList[31]?.id,
+  crscod: "COM203",
+  value: "Public Relations",
+  label: "Public Relations",
+},
+
+// Faculty of Agriculture (index 7)
+// Animal Science (departmentList[32])
+{
+  id: uuidv4(),
+  name: "Animal Nutrition",
+  facultyid: facultyList[7]?.id,
+  departmentid: departmentList[32]?.id,
+  crscod: "ANS101",
+  value: "Animal Nutrition",
+  label: "Animal Nutrition",
+},
+{
+  id: uuidv4(),
+  name: "Livestock Management",
+  facultyid: facultyList[7]?.id,
+  departmentid: departmentList[32]?.id,
+  crscod: "ANS203",
+  value: "Livestock Management",
+  label: "Livestock Management",
+},
+
+// Faculty of Fine Arts (index 8)
+// Music (departmentList[34])
+{
+  id: uuidv4(),
+  name: "Music Theory",
+  facultyid: facultyList[8]?.id,
+  departmentid: departmentList[34]?.id,
+  crscod: "MUS101",
+  value: "Music Theory",
+  label: "Music Theory",
+},
+{
+  id: uuidv4(),
+  name: "Choral Studies",
+  facultyid: facultyList[8]?.id,
+  departmentid: departmentList[34]?.id,
+  crscod: "MUS204",
+  value: "Choral Studies",
+  label: "Choral Studies",
+},
+
+// Faculty of Environmental Studies (index 9)
+// Geography and Environmental Science (departmentList[37])
+{
+  id: uuidv4(),
+  name: "Environmental Management",
+  facultyid: facultyList[9]?.id,
+  departmentid: departmentList[37]?.id,
+  crscod: "ENV101",
+  value: "Environmental Management",
+  label: "Environmental Management",
+},
+{
+  id: uuidv4(),
+  name: "Climate Change Policies",
+  facultyid: facultyList[9]?.id,
+  departmentid: departmentList[37]?.id,
+  crscod: "ENV203",
+  value: "Climate Change Policies",
+  label: "Climate Change Policies",
+}
+
+];
+
+
+
+const dummyData : AllcontextI = {
     users: [
         { academicid: "U001", password: "password123" },
         { academicid: "U002", password: "password456" },
@@ -81,381 +1163,16 @@ export const dummyData: AllcontextI = {
             courses: ["C201"],
         },
     ],
-    courses: [
-        {
-            id: "C101", facultyid: "F001", departmentid: "D001", crscod: "CS101",
-            value: "",
-            label: ""
-        },
-        {
-            id: "C102", facultyid: "F001", departmentid: "D001", crscod: "CS102",
-            value: "",
-            label: ""
-        },
-        {
-            id: "C201", facultyid: "F002", departmentid: "D002", crscod: "MK201",
-            value: "",
-            label: ""
-        },
-    ],
-    faculty: [
-        {
-            id: "F001", name: "Engineering",
-            value: "",
-            label: "Engineering"
-        },
-        {
-            id: "F002", name: "Business",
-            value: "",
-            label: "Business"
-        },
-    ],
-    department: [
-        {
-            id: "D001", facultyid: "F001", name: "Computer Science",
-            value: "",
-            label:  "Computer Science"
-        },
-        {
-            id: "D002", facultyid: "F002", name: "Finance",
-            value: "",
-            label: "Computer Science"
-        },
-  ],
-    
-
+    courses: courseList,
+    faculty: facultyList,
+    department: departmentList,
 };
 
-/*export const dummyData2: AllcontextI = {
-  faculty: [
-    {
-      id: uuidv4(),
-      name: "Faculty of Arts & Humanities",
-      value: "Faculty of Arts & Humanities",
-      label: "Faculty of Arts & Humanities",
-    },
-    {
-      id: uuidv4(),
-      name: "Faculty of Science",
-      value: "Faculty of Science",
-      label: "Faculty of Science",
-    },
-    {
-      id: uuidv4(),
-      name: "Faculty of Engineering & Technology",
-      value: "Faculty of Engineering & Technology",
-      label: "Faculty of Engineering & Technology",
-    },
-    {
-      id: uuidv4(),
-      name: "Faculty of Medicine & Health Sciences",
-      value: "Faculty of Medicine & Health Sciences",
-      label: "Faculty of Medicine & Health Sciences",
-    },
-    {
-      id: uuidv4(),
-      name: "Faculty of Commerce & Business Administration",
-      value: "Faculty of Commerce & Business Administration",
-      label: "Faculty of Commerce & Business Administration",
-    },
-    {
-      id: uuidv4(),
-      name: "Faculty of Social Sciences",
-      value: "Faculty of Social Sciences",
-      label: "Faculty of Social Sciences",
-    },
-    {
-      id: uuidv4(),
-      name: "Faculty of Law",
-      value: "Faculty of Law",
-      label: "Faculty of Law",
-    },
-    {
-      id: uuidv4(),
-      name: "Faculty of Education",
-      value: "Faculty of Education",
-      label: "Faculty of Education",
-    },
-    {
-      id: uuidv4(),
-      name: "Faculty of Fine Arts & Design",
-      value: "Faculty of Fine Arts & Design",
-      label: "Faculty of Fine Arts & Design",
-    },
-    {
-      id: uuidv4(),
-      name: "Faculty of Computer Science & Information Technology",
-      value: "Faculty of Computer Science & Information Technology",
-      label: "Faculty of Computer Science & Information Technology",
-    },
-    {
-      id: uuidv4(),
-      name: "Faculty of Agriculture & Environmental Sciences",
-      value: "Faculty of Agriculture & Environmental Sciences",
-      label: "Faculty of Agriculture & Environmental Sciences",
-    },
-    {
-      id: uuidv4(),
-      name: "Faculty of Architecture & Urban Planning",
-      value: "Faculty of Architecture & Urban Planning",
-      label: "Faculty of Architecture & Urban Planning",
-    },
-    {
-      id: uuidv4(),
-      name: "Faculty of Media & Communication",
-      value: "Faculty of Media & Communication",
-      label: "Faculty of Media & Communication",
-    },
-    {
-      id: uuidv4(),
-      name: "Faculty of Hospitality & Tourism Management",
-      value: "Faculty of Hospitality & Tourism Management",
-      label: "Faculty of Hospitality & Tourism Management",
-    },
-    {
-      id: uuidv4(),
-      name: "Faculty of Marine & Oceanic Studies",
-      value: "Faculty of Marine & Oceanic Studies",
-      label: "Faculty of Marine & Oceanic Studies",
-    },
-    {
-      id: uuidv4(),
-      name: "Faculty of Aviation & Aerospace Studies",
-      value: "Faculty of Aviation & Aerospace Studies",
-      label: "Faculty of Aviation & Aerospace Studies",
-    },
-    {
-      id: uuidv4(),
-      name: "Faculty of Veterinary Medicine",
-      value: "Faculty of Veterinary Medicine",
-      label: "Faculty of Veterinary Medicine",
-    },
-    {
-      id: uuidv4(),
-      name: "Faculty of Sports & Physical Education",
-      value: "Faculty of Sports & Physical Education",
-      label: "Faculty of Sports & Physical Education",
-    },
-    {
-      id: uuidv4(),
-      name: "Faculty of Energy & Environmental Sciences",
-      value: "Faculty of Energy & Environmental Sciences",
-      label: "Faculty of Energy & Environmental Sciences",
-    },
-    {
-      id: uuidv4(),
-      name: "Faculty of Transportation & Logistics Management",
-      value: "Faculty of Transportation & Logistics Management",
-      label: "Faculty of Transportation & Logistics Management",
-    },
-    {
-      id: uuidv4(),
-      name: "Faculty of Military & Security Studies",
-      value: "Faculty of Military & Security Studies",
-      label: "Faculty of Military & Security Studies",
-    }
-  ],
-  department: [
-    {
-      id: uuidv4(),
-      facultyid: "Faculty of Arts & Humanities",
-      name: "Department of English",
-      value: "Department of English",
-      label: "Department of English",
-    },
-    {
-      id: uuidv4(),
-      facultyid: "Faculty of Arts & Humanities",
-      name: "Department of History",
-      value: "Department of History",
-      label: "Department of History",
-    },
-    {
-      id: uuidv4(),
-      facultyid: "Faculty of Arts & Humanities",
-      name: "Department of Philosophy",
-      value: "Department of Philosophy",
-      label: "Department of Philosophy",
-    },
-    {
-      id: uuidv4(),
-      facultyid: "Faculty of Arts & Humanities",
-      name: "Department of Religion",
-      value: "Department of Religion",
-      label: "Department of Religion",
-    },
-    {
-      id: uuidv4(),
-      facultyid: "Faculty of Arts & Humanities",
-      name: "Department of Visual Arts",
-      value: "Department of Visual Arts",
-      label: "Department of Visual Arts",
-    },
-    {
-      id: uuidv4(),
-      facultyid: "Faculty of Science",
-      name: "Department of Biology",
-      value: "Department of Biology",
-      label: "Department of Biology",
-    },
-    {
-      id: uuidv4(),
-      facultyid: "Faculty of Science",
-      name: "Department of Chemistry",
-      value: "Department of Chemistry",
-      label: "Department of Chemistry",
-    },
-    {
-      id: uuidv4(),
-      facultyid: "Faculty of Science",
-      name: "Department of Mathematics",
-      value: "Department of Mathematics",
-      label: "Department of Mathematics",
-    },
-    {
-      id: uuidv4(),
-      facultyid: "Faculty of Science",
-      name: "Department of Physics",
-      value: "Department of Physics",
-      label: "Department of Physics",
-    },
-    {
-      id: uuidv4(),
-      facultyid: "Faculty of Engineering & Technology",
-      name: "Department of Civil Engineering",
-      value: "Department of Civil Engineering",
-      label: "Department of Civil Engineering",
-    },
-    {
-      id: uuidv4(),
-      facultyid: "Faculty of Engineering & Technology",
-      name: "Department of Electrical Engineering",
-      value: "Department of Electrical Engineering",
-      label: "Department
-    }
-  
-  
-  ],
-}*/
 
 
 
-/*// initialStoreData.ts
 
-import { v4 as uuidv4 } from 'uuid';
-import { StoreI, FacultyI, DeptI, CourseI, StudentI, LecturerI, AttendanceI } from './Store.interface';
 
-const faculties: FacultyI[] = [
-  { id: uuidv4(), name: "Engineering" },
-  { id: uuidv4(), name: "Arts" },
-  { id: uuidv4(), name: "Science" }
-];
 
-const departments: DeptI[] = [
-  { id: uuidv4(), name: "Computer Science", facultyId: faculties[0].id },
-  { id: uuidv4(), name: "Mechanical Engineering", facultyId: faculties[0].id },
-  { id: uuidv4(), name: "Physics", facultyId: faculties[2].id }
-];
 
-const courses: CourseI[] = [
-  { id: uuidv4(), name: "Algorithms", deptI: departments[0].id, facultyId: faculties[0].id },
-  { id: uuidv4(), name: "Thermodynamics", deptI: departments[1].id, facultyId: faculties[0].id },
-  { id: uuidv4(), name: "Quantum Mechanics", deptI: departments[2].id, facultyId: faculties[2].id }
-];
-
-const students: StudentI[] = [
-  {
-    id: uuidv4(),
-    firstname: "John",
-    lastname: "Doe",
-    email: "john.doe@example.com",
-    dob: "2000-01-01",
-    matrixcode: "M1234",
-    guardiansname: "Jane Doe",
-    guardiansemail: "jane.doe@example.com",
-    guardianscontact: "1234567890",
-    relationship: "Mother",
-    address: "123 Main St",
-    facultyId: faculties[0].id,
-    deptId: departments[0].id,
-    yearId: "year1",
-    courses: [courses[0].id, courses[1].id],
-    imagefile: "john_doe.jpg"
-  },
-  {
-    id: uuidv4(),
-    firstname: "Alice",
-    lastname: "Smith",
-    email: "alice.smith@example.com",
-    dob: "1999-05-15",
-    matrixcode: "M5678",
-    guardiansname: "Robert Smith",
-    guardiansemail: "robert.smith@example.com",
-    guardianscontact: "0987654321",
-    relationship: "Father",
-    address: "456 Elm St",
-    facultyId: faculties[2].id,
-    deptId: departments[2].id,
-    yearId: "year2",
-    courses: [courses[2].id],
-    imagefile: "alice_smith.jpg"
-  }
-];
-
-const lecturers: LecturerI[] = [
-  {
-    id: uuidv4(),
-    firstname: "Dr. Emily",
-    lastname: "Johnson",
-    email: "emily.johnson@example.com",
-    password: "securepassword",
-    address: "789 Oak St",
-    facultyId: faculties[0].id,
-    deptId: departments[0].id,
-    courseId: courses[0].id,
-    imagefile: "emily_johnson.jpg"
-  },
-  {
-    id: uuidv4(),
-    firstname: "Dr. Michael",
-    lastname: "Brown",
-    email: "michael.brown@example.com",
-    password: "securepassword",
-    address: "321 Pine St",
-    facultyId: faculties[2].id,
-    deptId: departments[2].id,
-    courseId: courses[2].id,
-    imagefile: "michael_brown.jpg"
-  }
-];
-
-const attendance: AttendanceI[] = [
-  {
-    id: uuidv4(),
-    facultyId: faculties[0].id,
-    deptId: departments[0].id,
-    courseId: courses[0].id,
-    lecturerId: lecturers[0].id,
-    imagefile: "attendance1.jpg"
-  },
-  {
-    id: uuidv4(),
-    facultyId: faculties[2].id,
-    deptId: departments[2].id,
-    courseId: courses[2].id,
-    lecturerId: lecturers[1].id,
-    imagefile: "attendance2.jpg"
-  }
-];
-
-const storeData: StoreI = {
-  faculties,
-  departments,
-  courses,
-  students,
-  lecturers,
-  attendance
-};
-
-export default storeData;
-*/
+export default dummyData;
