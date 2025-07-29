@@ -5,22 +5,25 @@ import Input from '@/components/Input/Input';
 import Addbutton from '@/components/UniversalButtons/Addbutton';
 import Select from 'react-select';
 import { ImLab } from 'react-icons/im';
-import { storeReducer, Allcontext } from '@/app/Admin/Store/Store';
+import { useStore } from '@/app/Admin/Store/Store';
 import { v4 as uuidv4 } from 'uuid';
 import customStyles from '@/components/Form/customStyles'
 
+interface fac {
+  value: string;
+  label: string;
+}
 
-function Departmentform({faculties}:{faculties: any[]}) {
-
-    const [state, dispatch] = useReducer(storeReducer, Allcontext);
-    const [selected_faculty, setSelected_faculty] = useState("");
+function Departmentform() {
+  const { storeState, storeDispatch } = useStore();
+    const [selected_faculty, setSelected_faculty] = useState<fac>();
   const [department, setDepartment] = useState("");
+  const faculties = storeState.faculty;
   
-  const mapFacultiesDataToOption = useMemo(() => faculties?.map(v => ({value: v.id, label: v.name})), [faculties])
-
+  const mapFacultiesDataToOption = useMemo(() => faculties.map(v => ({value: v.id, label: v.name})), [faculties])
+  let val_of_selected_fac = selected_faculty?.value;
 
     
-
     function recordDeptvalue(e:any) {
     setDepartment(e.target.value);
     }
@@ -28,35 +31,24 @@ function Departmentform({faculties}:{faculties: any[]}) {
         setSelected_faculty(selected);
     }
      
-    const fac_id = faculties.filter((item) => {
-        const lc = selected_faculty === item.value;
-        return lc ? item.value : null;
-    });
-
-    const selecting_options = state.faculty;
-    useEffect(() => {
-      console.log(state.faculty)
-    },[state.faculty])
+    
 
     function addDepartment() {
         if (department.trim() !== "") {
-            dispatch({
+            storeDispatch({
                 type: 'ADD_DEPARTMENT',
                 payload: {
-                    id: uuidv4,
-                    facultyid: fac_id[0]?.id,
+                    id: uuidv4(),
+                    facultyid: val_of_selected_fac,
                     name: department,
                     value: department,
                     label:department.toUpperCase,
                 }
             })
         }
-        setDepartment("");
-        console.log(state.department);
+      setDepartment("");
+      
     }
-
-   
-
 
 
   return (

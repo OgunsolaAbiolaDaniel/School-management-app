@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaReact } from "react-icons/fa";
-function GenerateButton({ click, title }: { click: any; title: string; }) {
+function GenerateButton({ click, title }: { click: React.MouseEventHandler<HTMLButtonElement>; title: string; }) {
   return (
     <button
       title="Generate button"

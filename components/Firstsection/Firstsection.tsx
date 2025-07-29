@@ -5,12 +5,11 @@ import { LiaStarOfLifeSolid } from "react-icons/lia";
 import { PiDiamondsFourThin } from "react-icons/pi";
 import { HiOutlineAcademicCap } from "react-icons/hi2";
 import { SiCapacitor } from "react-icons/si";
-import { useContext } from "react";
-import { Storeresources } from "@/app/Admin/Store/Store";
+import { useStore } from "@/app/Admin/Store/Store";
 
 
 function Firstsection() {
-  const storeitems = useContext(Storeresources);
+  const { storeState, storeDispatch } = useStore();
 
 
 
@@ -20,7 +19,7 @@ function Firstsection() {
         <li className="w-full overflow-hidden rounded-lg">
           <Dashboardcard
             title={"Total Courses"}
-            main={storeitems.courses.length}
+            main={storeState.courses.length}
             icon={<LiaStarOfLifeSolid />}
             svgclass="text-purple-900"
             color="bg-purple-600"
@@ -31,7 +30,7 @@ function Firstsection() {
         <li className="w-full overflow-hidden rounded-lg">
           <Dashboardcard
             title={"Total Students"}
-            main={storeitems.student.length}
+            main={storeState.student.length}
             icon={<HiOutlineAcademicCap />}
             svgclass="text-amber-500 opacity-70"
             color="bg-gray-100"
@@ -42,7 +41,7 @@ function Firstsection() {
         <li className="w-full overflow-hidden rounded-lg">
           <Dashboardcard
             title={"Total Lecturers"}
-            main={storeitems.lecturer.length}
+            main={storeState.lecturer.length}
             icon={<PiDiamondsFourThin />}
             svgclass="text-green-500 opacity-50"
             color="bg-blue-200"
@@ -53,7 +52,7 @@ function Firstsection() {
         <li className="w-full overflow-hidden rounded-lg">
           <Dashboardcard
             title={"Total Online"}
-            main={storeitems.users.length}
+            main={storeState.users.length}
             icon={<SiCapacitor />}
             svgclass="text-red-500 opacity-60"
             color="bg-slate-100"
@@ -66,4 +65,4 @@ function Firstsection() {
   );
 }
 
-export default Firstsection
+export default Firstsection;
