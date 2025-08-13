@@ -32,16 +32,16 @@ function AddLecturerForm() {
         <div className="px-4 flex flex-col gap-2 items-center w-85%">
                   
           <div className='flex flex-col w-full gap-2 bsm:flex-row bsm:gap-4 justify-between '>
-            <Input label={"First Name"} title={"First name"} type={"text"} />
-            <Input label={"Last Name"} title={"Last name"} type={"text"} />
+            <Input value={""} label={"First Name"} title={"First name"} type={"text"} />
+            <Input value={""} label={"Last Name"} title={"Last name"} type={"text"} />
           </div>
           <div className='flex flex-col w-full gap-2 bsm:flex-row bsm:gap-4 justify-between '>
-            <Input label={"Email"} title={"Email"} type={"email"} />
-            <Input label={"Password"} title={"Password"} type={"password"} />
+            <Input value={""}  label={"Email"} title={"Email"} type={"email"} />
+            <Input value={""} label={"Password"} title={"Password"} type={"password"} />
           </div>
                   
           <div className='flex flex-col w-full gap-2 bsm:flex-row self-start bsm:gap-4 justify-between '>
-            <Input label={"Address"} title={"Address"} type={"text"} />
+            <Input value={""} label={"Address"} title={"Address"} type={"text"} />
           </div>
           {/*select courses */}
           <div className='flex flex-col w-full gap-2 bsm:flex-row bsm:gap-4 justify-between '>
@@ -70,7 +70,7 @@ function AddLecturerForm() {
               <div className="border border-zinc-400  px-3 py-1.5 text-sm">
                 #0000
               </div>
-              <GenerateButton click="" title={'Id'} />
+              <GenerateButton click={()=>{}} title={'Id'} />
             </div>
           </div>
 

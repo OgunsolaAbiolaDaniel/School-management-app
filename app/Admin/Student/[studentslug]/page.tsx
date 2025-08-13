@@ -6,6 +6,7 @@ import Image from 'next/image'
 import qrcode from '@/public/assets/images/qrcode.svg'
 import { FaDownload } from "react-icons/fa6";
 import { BiSolidFilePdf } from "react-icons/bi";
+import { PiStudentLight } from 'react-icons/pi'
 
 function page() {
     return (
@@ -239,7 +240,7 @@ function page() {
                                 <ul className='text-xs px-5  font-semibold flex flex-col gap-2 list-disc font-sans'>
                                     <li>Students must wear their ID cards visibly during school hours.</li>
                                     <li>Do not alter, deface, or misuse your ID card.</li>
-                                    <li>Use your ID card for access to school facilities and events. Sharing or using another student's ID is prohibited.</li>
+                                    <li>Use your ID card for access to school facilities and events. Sharing or using another student&apos;s ID is prohibited.</li>
                                     <li>Treat your ID card as an important part of school identification. Keep it safe and in good condition.</li>
                                     <li>Ensure that your ID is worn in accordance with the school dress code policy.</li>
                                     <li>Failure to follow ID card rules may result in disciplinary measures.</li>

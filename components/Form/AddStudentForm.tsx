@@ -14,6 +14,7 @@ import { PiStudentLight } from "react-icons/pi";
 import customStyles from './customStyles'
 
 
+
 function AddStudentForm() {
    return (
      <div className="border shadow-md w-full bsm:w-fit rounded-lg py-2">
@@ -31,17 +32,17 @@ function AddStudentForm() {
          </div>
          <div className="px-4 flex flex-col gap-2 items-center w-85%">
            <div className="flex flex-col w-full gap-2 bsm:flex-row bsm:gap-4 justify-between ">
-             <Input label={"First Name"} title={"First name"} type={"text"} />
-             <Input label={"Last Name"} title={"Last name"} type={"text"} />
+             <Input value={""} label={"First Name"} title={"First name"} type={"text"} />
+             <Input value={""} label={"Last Name"} title={"Last name"} type={"text"} />
            </div>
            <div className="flex flex-col w-full gap-2 bsm:flex-row bsm:gap-4 justify-between ">
-             <Input label={"Email"} title={"Email"} type={"email"} />
-             <Input label={"Password"} title={"Password"} type={"password"} />
+             <Input value={""} label={"Email"} title={"Email"} type={"email"} />
+             <Input value={""} label={"Password"} title={"Password"} type={"password"} />
            </div>
 
                    {/*Dob && Country */}
   <div className="flex flex-col w-full gap-2 bsm:flex-row bsm:gap-4 justify-between ">
-             <Input label={"Date of Birth"} title={"Date of Birth"} type={"date"} />
+             <Input value={""} label={"Date of Birth"} title={"Date of Birth"} type={"date"} />
               <div className="bsm:w-full">
                {/* TODOAdd list of All Counties*/}
                <Select
@@ -56,20 +57,20 @@ function AddStudentForm() {
 
 
            <div className="flex flex-col w-full gap-2 bsm:flex-row self-start bsm:gap-4 justify-between ">
-             <Input label={"Address"} title={"Address"} type={"text"} />
+             <Input value={""} label={"Address"} title={"Address"} type={"text"} />
           </div>
                    
 
 
               {/* g/email and name*/}
          <div className="flex flex-col w-full gap-2 bsm:flex-row bsm:gap-4 justify-between ">
-             <Input label={"Guardian's Name"} title={"Guardian's Name"} type={"text"} />
-             <Input label={"Guardian's Email"} title={"Guardian's Email"} type={"Email"} />
+             <Input value={""} label={"Guardian's Name"} title={"Guardian's Name"} type={"text"} />
+             <Input value={""} label={"Guardian's Email"} title={"Guardian's Email"} type={"Email"} />
            </div>
           
                    {/*contact&relationship */}
          <div className="flex flex-col w-full gap-2 bsm:flex-row bsm:gap-4 justify-between ">
-             <Input label={"Guardian's contact"} title={"Guardian's contact"} type={"number"} max={15} />
+             <Input value={""} label={"Guardian's contact"} title={"Guardian's contact"} type={"number"} max={15} />
             <div className="bsm:w-full">
                {/* TODOAdd list of All Relationship*/}
                <Select
@@ -155,7 +156,7 @@ function AddStudentForm() {
                <div className="border border-zinc-400  px-3 py-1.5 text-sm">
                  #0000
                </div>
-               <GenerateButton click="" title={"Id"} />
+               <GenerateButton click={()=>{ }} title={"Id"} />
              </div>
            </div>
 
