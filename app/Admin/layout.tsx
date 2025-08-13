@@ -16,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <div >
+      <div className={inter.className}>
         <div className="flex">
           <div className="hidden bmd:contents w-fit ">
             <Secondsidebar />
@@ -28,7 +28,7 @@ export default function RootLayout({
             <div className="px-2 py-1 overflow-y-scroll">{children}</div>
           </div>
         </div>
-      </body>
-    </html>
+      </div>
+    </div>
   );
 }

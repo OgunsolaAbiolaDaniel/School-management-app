@@ -14,49 +14,68 @@ interface fac {
   value: string;
   label: string;
 }
+interface dept{
+  value: string;
+  label: string;
+}
 
 
 function Courseform() {
   const { storeState, storeDispatch } = useStore();
   const [course, setCourse] = useState("");
+  const [course_code, setCourse_Code] = useState("");
   const [selected_faculty, setSelected_faculty] = useState<fac>();
+  const [selected_dept, setSelected_dept] = useState<dept>();
   
   const dept = storeState.department;
-  const faculty = storeState.faculty; 
+  const faculty = storeState.faculty;
 
   let fac_val = selected_faculty?.value;
-  
-  function select_faculty(selected:any) {
+  let dept_val = selected_dept?.value;
+
+  function select_faculty(selected: any) {
     setSelected_faculty(selected);
+    course_code ? setCourse_Code("") : null;
+    selected_dept ? setSelected_dept(undefined) : null;
+  }
+  function select_dept(selected: any) {
+    setSelected_dept(selected);
+    course_code ? setCourse_Code("") : null;
   }
 
   
   const map_data_to_fac = useMemo(() => faculty?.map(v => ({ value: v.id, label: v.label })), [faculty]);
 
-  function check({ vcheck, d_to_be_compared_with }: { vcheck: string; d_to_be_compared_with:string}) {
+  function check({ vcheck, d_to_be_compared_with }: { vcheck: string; d_to_be_compared_with: string }) {
     vcheck === d_to_be_compared_with ? true : false;
   };
 
   const filteredDepartments = useMemo(() => {
-  if (!fac_val) return [];
-  return dept?.filter((d) => d.facultyid === fac_val)
-              .map((d) => ({ value: d.id, label: d.label }));
-}, [fac_val, dept]);
+    if (!fac_val) return [];
+    return dept?.filter((d) => d.facultyid === fac_val)
+      .map((d) => ({ value: d.id, label: d.label }));
+  }, [fac_val, dept]);
 
-  let final:string;
+  let final: string;
 
+  //To generate the course code ;
   const generatecrscod = (fac: string) => {
     if (!fac) return null;
     const num = String(Math.floor(Math.random() * 899 + 101));
     const cd = fac?.slice(0, 3).toUpperCase();
     final = cd.concat(num);
-   const check= storeState.courses.filter((d)=>{d.crscod=== final})
+    const check = storeState.courses.filter((d) => { d.crscod === final })
+    check.length > 0 ? generatecrscod : null;
     console.log(final);
+    setCourse_Code(final);
     return final;
   };
-
+  //ends here 
+  //to find the dept and use the first three letters for the concatination 
   let crscode;
-  const finder = faculty.find(()=>{})
+  const finder = useMemo(() => dept.find((d) => d.id === dept_val), [dept_val, dept]);
+  console.log(finder);
+  //
 
   
 //TODO HYDRATION ERROR ON THE SELECT ;
@@ -78,6 +97,7 @@ function Courseform() {
               placeholder="Faculty"
               styles={customStyles}
               onChange={select_faculty}
+              value={selected_faculty}
             />
           </div>
           <div className="w-full mb-2">
@@ -86,17 +106,19 @@ function Courseform() {
               classNamePrefix="custom-select"
               placeholder="Select a Department"
               styles={customStyles}
+              onChange={select_dept}
+              value={selected_dept}
             />
           </div>
           {/*TODO  click should be changed to function && generate button for code should check in store state later*/}
           <div className="flex justify-between w-full py-3 px-1 mb-3">
-            <div className="border border-zinc-400  px-3 py-1.5 text-sm">
-              {crscode}
+            <div  className="shadow-inner w-16 px-2 py-1.5 rounded-md text-blue-500 bg-slate-200 text-sm text-center">
+              {course_code}
             </div>
-            <GenerateButton click={()=>generatecrscod("jbjb")} title={'Code'} />
+            <GenerateButton title="Code"click={()=>generatecrscod(finder?.label || "")} />
           </div>
           <div className="mb-1 py-1.5">
-            <Addbutton text='Add Course' click={()=>{}} />
+            <Addbutton text='Add Course' click={()=>{}} /> 
           </div>
         </div>
       </div>

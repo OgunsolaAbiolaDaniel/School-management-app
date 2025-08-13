@@ -11,7 +11,7 @@ import Image from "next/image";
 import PickImagebutton from "../UniversalButtons/PickImagebutton";
 import Addformbtn from "../UniversalButtons/Addformbtn";
 import { PiStudentLight } from "react-icons/pi";
-import customStyles from './customstyles'
+import customStyles from './customStyles'
 
 
 function AddStudentForm() {
