@@ -1,5 +1,5 @@
 import React from 'react'
-import { PiStudentLight } from 'react-icons/pi'
+
 import profileimage from '@/public/assets/images/profileimg.png'
 import logo from '@/public/assets/images/logo.png'
 import Image from 'next/image'
@@ -88,12 +88,12 @@ function page() {
              <div className="flex px-1 w-full gap-2 flex-wrap bsm:flex-nowrap justify-start ">
               
               <div className='w-fit bsm:w-1/2'>
-                  <span className='text-base font-medium'>Guardian's Name: </span>
+                  <span className='text-base font-medium'>Guardian&lsquo;s Name: </span>
                   <span className='text-base font-normal'>Olayinka Sobowale</span>
               </div>
               {/*Last Name */}
              <div  className='w-fit bsm:w-1/2 '>
-                  <span className='text-base font-medium'>Guardian's Email: </span>
+                  <span className='text-base font-medium'>Guardian&lsquo;s Email: </span>
                   <span className='text-base font-normal'>example@gmail.com</span>
               </div>
 
@@ -103,7 +103,7 @@ function page() {
           <div className="flex px-1 w-full gap-2 flex-wrap bsm:flex-nowrap justify-start ">
               
               <div className='w-fit bsm:w-1/2'>
-                  <span className='text-base font-medium'>Guardian's Contact: </span>
+                  <span className='text-base font-medium'>Guardian&lsquo;s Contact: </span>
                   <span className='text-base font-normal'>+23480849581836</span>
               </div>
               {/*Last Name */}
@@ -279,8 +279,6 @@ function page() {
                     </div>
                 </div>
          </div>
-
-
 
          </>
 
